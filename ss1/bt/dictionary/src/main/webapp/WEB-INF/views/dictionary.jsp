@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>Dictionary</h1>
-<form action="/search" method="post">
+<form action="/search" method="get">
     <table>
         <tr>
             <td>English</td>

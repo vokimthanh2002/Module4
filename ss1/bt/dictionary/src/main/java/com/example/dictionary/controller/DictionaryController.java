@@ -1,4 +1,4 @@
-package com.example.dictionary;
+package com.example.dictionary.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,14 +13,14 @@ public class DictionaryController {
         return "/dictionary";
     }
 
-    @PostMapping("/search")
+    @GetMapping("/search")
     public String getDictionary(Model model, @RequestParam String eng){
         String[] english = {"Hello","GoodBye"};
         String[] vietnamese = {"Xin Chào","Tạm Biệt"};
-        String search = "";
+        String search ="";
         for(int i = 0; i < english.length; i++){
             if(eng.equals(english[i])){
-                search += vietnamese[i];
+                search = vietnamese[i];
             }
         }
         model.addAttribute("result",search);
