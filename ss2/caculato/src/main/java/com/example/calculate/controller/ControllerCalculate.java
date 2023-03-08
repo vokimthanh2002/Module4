@@ -15,7 +15,7 @@ public class ControllerCalculate {
     public String showCalculate(){
         return "create";
     }
-    @PostMapping(value = "calculate")
+    @GetMapping(value = "calculate")
     public String result(@RequestParam float num1, @RequestParam float num2, @RequestParam String calculate, Model model){
         String result = null;
         switch (calculate){
