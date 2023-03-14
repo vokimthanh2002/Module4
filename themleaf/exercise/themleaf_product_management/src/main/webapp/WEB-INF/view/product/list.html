@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/searchName}" method="get">
+    <input type="text" placeholder="Input name of product for searching" th:name="searching" style="width: 300px"/>
+    <button type="submit">Search</button>
+</form>
+<h1>List product</h1>
+<a href="/create">Create product</a>
+<h4 th:if="${message != null}" th:text="${message}"></h4>
+<table border="1">
+    <tr>
+        <th>No</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gia</th>
+        <th>So Luong</th>
+        <th>Mau Sac</th>
+        <th>Mo Ta</th>
+        <th>Chuc Nang</th>
+    </tr>
+    <tr th:each="pd, iter: ${listProduct}" th:object="${pd}">
+        <td th:text="${iter.count}"></td>
+        <!--<td th:text="*{id}"></td>
+        <td th:text="*{name}"></td>
+        <td th:text="*{address}"></td>-->
+        <td th:text="${pd.getIdSanPham()}"></td>
+        <td th:text="${pd.getTenSanPham()}"></td>
+        <td th:text="${pd.getGia()}"></td>
+        <td th:text="${pd.getSoLuong()}"></td>
+        <td th:text="${pd.getMauSac()}"></td>
+        <td th:text="${pd.getMoTa()}"></td>
+        <td>
+        <a methods="post" th:href="@{/update/{id}(id=*{idSanPham})}" style="text-decoration: none">Update</a>
+        <a th:href="@{/remove/{id}(id=*{idSanPham})}" style="text-decoration: none">Remove</a>
+    </tr>
+</table>
+</body>
+</html>
