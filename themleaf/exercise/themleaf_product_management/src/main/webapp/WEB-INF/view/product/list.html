@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<form th:action="@{/searchName}" method="get">
+<form th:action="@{/searchName} ">
     <input type="text" placeholder="Input name of product for searching" th:name="searching" style="width: 300px"/>
     <button type="submit">Search</button>
 </form>
@@ -36,7 +36,7 @@
         <td th:text="${pd.getMoTa()}"></td>
         <td>
         <a methods="post" th:href="@{/update/{id}(id=*{idSanPham})}" style="text-decoration: none">Update</a>
-        <a th:href="@{/remove/{id}(id=*{idSanPham})}" style="text-decoration: none">Remove</a>
+            <a th:href="@{/remove/{id}(id=*{idSanPham})}" style="text-decoration: none">Remove</a>
     </tr>
 </table>
 </body>

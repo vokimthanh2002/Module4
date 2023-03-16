@@ -10,7 +10,7 @@
   <table>
     <tr>
       <td>ID Product</td>
-      <td th:type="${listProduct.size()+1}" th:text="${listProduct.size()+1}"  th:field="*{idSanPham}"></td>
+      <td><input type="text" th:value="${listProduct.size()+1}" th:field="*{idSanPham}"></td>
     </tr>
     <tr>
       <td>Name Product</td>

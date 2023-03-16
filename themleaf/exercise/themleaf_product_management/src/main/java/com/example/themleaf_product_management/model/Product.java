@@ -1,6 +1,6 @@
 package com.example.themleaf_product_management.model;
 
-import java.util.Objects;
+//https://github.com/vokimthanh2002/Module4/tree/main/themleaf/exercise/themleaf_product_management
 
 public class Product {
     int idSanPham;
