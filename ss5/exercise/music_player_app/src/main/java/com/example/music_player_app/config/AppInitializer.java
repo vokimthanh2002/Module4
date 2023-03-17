@@ -1,4 +1,4 @@
-package codegym.vn.config;
+package com.example.music_player_app.config;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;

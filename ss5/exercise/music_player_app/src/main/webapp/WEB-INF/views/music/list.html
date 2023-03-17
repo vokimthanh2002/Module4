@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<form action="/search">
+    <label>Search</label>
+    <input type="text" placeholder="Search by name" name="inputSearch">
+    <input type="submit" value="Search">
+</form>
+<h1>List music</h1>
+<h4 th:if="${message != null}" th:text="${message}"></h4>
+<a th:href="@{/create}">Create music</a>
+<table border="1">
+    <tr>
+        <th>ID bai hat</th>
+        <th>Ten bai hat</th>
+        <th>Nghe Si</th>
+        <th>The loai</th>
+        <th>Link bai hat</th>
+        <th>Chuc nang</th>
+    </tr>
+
+    <tr th:each="music, iter: ${listMusic}" th:object="${music}" >
+        <td th:text="${music.idBaiHat}"></td>
+        <td th:text="${music.tenBaiHat}"></td>
+        <td th:text="${music.ngheSi}"></td>
+        <td th:text="${music.theLoai}"></td>
+        <td ><a th:text="${music.url}"  th:href="@{${music.url}}"></a></td>
+        <td >
+            <a methods="post" th:href="@{/update/{id}(id=*{idBaiHat})}" style="text-decoration: none">Update</a>
+            <a th:href="@{/remove/{id}(id=*{idBaiHat})}" style="text-decoration: none">Remove</a>
+        </td>
+    </tr>
+</table>
 </body>
 </html>

@@ -1,9 +1,5 @@
-package codegym.vn.config;
+package com.example.music_player_app.config;
 
-import codegym.vn.repository.StudentRepository;
-import codegym.vn.repository.StudentRepositoryImpl;
-import codegym.vn.service.StudentService;
-import codegym.vn.service.StudentServiceImpl;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -20,10 +16,8 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.spring5.ISpringTemplateEngine;
 import org.thymeleaf.spring5.SpringTemplateEngine;
@@ -37,7 +31,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("codegym.vn")
+@ComponentScan("com.example.music_player_app")
 @EnableTransactionManagement
 public class AppConfiguration extends WebMvcConfigurerAdapter implements ApplicationContextAware {
     private ApplicationContext applicationContext;
@@ -60,7 +54,7 @@ public class AppConfiguration extends WebMvcConfigurerAdapter implements Applica
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
-        templateResolver.setPrefix("/WEB-INF/view/thymeleaf/");
+        templateResolver.setPrefix("/WEB-INF/views/music/");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setCharacterEncoding("UTF-8");
@@ -90,17 +84,6 @@ public class AppConfiguration extends WebMvcConfigurerAdapter implements Applica
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
     }
-//    @Bean
-//    public StudentRepository getStudentRepository() {
-//        return new StudentRepositoryImpl();
-//    }
-//
-//    @Bean
-//    public StudentService getStudentService() {
-//        StudentServiceImpl service = new StudentServiceImpl();
-//        service.setStudentRepository(this.applicationContext.getBean(StudentRepository.class));
-//        return service;
-//    }
 
     // Config hibernate
     // Step 1: config datasource (thông tin kết nối DB)
@@ -108,9 +91,9 @@ public class AppConfiguration extends WebMvcConfigurerAdapter implements Applica
     public DriverManagerDataSource getDataSource() {
         DriverManagerDataSource datasource = new DriverManagerDataSource();
         datasource.setDriverClassName("com.mysql.jdbc.Driver");
-        datasource.setUrl("jdbc:mysql://localhost:3306/A0722i1?useSSL=false&useUnicode=true&characterEncoding=utf8");
-        datasource.setUsername("linh");
-        datasource.setPassword("123456");
+        datasource.setUrl("jdbc:mysql://localhost:3306/music?useSSL=false&useUnicode=true&characterEncoding=utf8");
+        datasource.setUsername("root");
+        datasource.setPassword("12345");
         return datasource;
     }
 
@@ -127,8 +110,7 @@ public class AppConfiguration extends WebMvcConfigurerAdapter implements Applica
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactory.setDataSource(getDataSource());
-        entityManagerFactory.setPackagesToScan(new String[]{"codegym.vn.entity"});
-
+        entityManagerFactory.setPackagesToScan(new String[]{"com.example.music_player_app.entyti"});
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         entityManagerFactory.setJpaVendorAdapter(vendorAdapter);
         entityManagerFactory.setJpaProperties(hibernateProperties());
