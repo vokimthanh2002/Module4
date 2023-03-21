@@ -3,14 +3,13 @@ package com.example.blog.controller;
 import com.example.blog.bean.Blog;
 import com.example.blog.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
@@ -23,27 +22,22 @@ import java.time.LocalDate;
 
 @Controller
 public class BlogController {
-
     @Autowired
-    private BlogService blogService;
-
-    @RequestMapping(value = "/")
-    public ModelAndView showHomePage(@PageableDefault(value = 10) Pageable pageable){
-        Page<Blog> blogs = blogService.findAll(pageable);
-        ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("blogs",blogs);
-        if (blogs.getContent().size()==0) {
-            modelAndView.addObject("msg", "Chưa có bài viết nào.");
+    BlogService blogService;
+    @GetMapping(value = "/home")
+    public String showHome(Model model, @PageableDefault(value = 5) Pageable pageable){
+        model.addAttribute("blogs",blogService.findAll(pageable));
+        if(blogService.findAll(pageable)==null){
+            model.addAttribute("msg","Chua co bai viet nao");
         }
-        return modelAndView;
+        return "home";
     }
 
     @GetMapping(value = "/create")
-    public String showPageCreate(Model model){
-        model.addAttribute("blog",new Blog());
+    public String showCreate(Model model){
+        model.addAttribute("blog", new Blog());
         return "create";
     }
-
     @PostMapping(value = "/create")
     public String save(@ModelAttribute Blog blog, @RequestParam("img") MultipartFile img, RedirectAttributes redirectAttributes){
         if (img.isEmpty()){
@@ -63,28 +57,47 @@ public class BlogController {
         blog.setDate(String.valueOf(today));
 
         blogService.save(blog);
-        return "redirect:/";
+        return "redirect:/home";
     }
-
-    @GetMapping(value = "edit/{id}")
-    public ModelAndView showEditPage(@PathVariable Long id) {
-        Blog blog = blogService.findById(id);
-        ModelAndView modelAndView = new ModelAndView("update");
-        modelAndView.addObject("blog", blog);
-        return modelAndView;
-    }
-
-    @GetMapping(value = "showDetail/{id}")
-    public ModelAndView showDetailPage(@PathVariable Long id) {
-        Blog blog = blogService.findById(id);
-        ModelAndView modelAndView = new ModelAndView("showDetail");
-        modelAndView.addObject("blog", blog);
-        return modelAndView;
-    }
-
-    @GetMapping(value = "delete/{id}")
-    public String delete(@PathVariable Long id, RedirectAttributes redirectAttributes){
+    @GetMapping(value = "remove/{id}")
+    public String remove(@PathVariable("id") Long id){
         blogService.remove(id);
-        return "redirect:/";
+        return "redirect:/home";
+    }
+    @GetMapping(value = "update/{id}")
+    public String showUpdate(@PathVariable("id") Long id,Model model){
+        model.addAttribute("blog",blogService.findById(id));
+        return "/update";
+    }
+    @PostMapping(value = "/update")
+    public String update(@ModelAttribute ("blog") Blog blog, @RequestParam("img") MultipartFile img ){
+        if (img.isEmpty()){
+            blog.setLinkImg("");
+        }
+        Path path = Paths.get("upload/");
+        try{
+            InputStream inputStream = img.getInputStream();
+            Files.copy(inputStream, path.resolve(img.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
+            blog.setLinkImg(img.getOriginalFilename().toLowerCase());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        LocalDate today = LocalDate.now();
+
+        blog.setDate(String.valueOf(today));
+
+        blogService.save(blog);
+        return "redirect:/home";
+    }
+    @GetMapping(value = "/search")
+    public String searchContent(@RequestParam("search") String search,Model model){
+       model.addAttribute("blogs", blogService.findByContent(search));
+       if(blogService.findByContent(search).isEmpty()){
+           model.addAttribute("msg","Khong tim thay phim lien quan");
+       }else {
+           model.addAttribute("msg","Khoang "+blogService.findByContent(search).size()+" ket qua duoc tim thay");
+       }
+       return "/home";
     }
 }

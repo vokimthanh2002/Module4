@@ -1,9 +1,6 @@
 package com.example.blog.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Blog {
@@ -25,6 +22,13 @@ public class Blog {
         this.content = content;
         this.linkImg = linkImg;
         this.date = date;
+    }
+
+    public Blog(Long id, String title, String content, String linkImg) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.linkImg = linkImg;
     }
 
     public Long getId() {

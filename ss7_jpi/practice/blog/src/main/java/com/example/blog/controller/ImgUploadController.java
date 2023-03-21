@@ -1,5 +1,6 @@
 package com.example.blog.controller;
 
+
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +28,7 @@ public class ImgUploadController {
                 ByteArrayResource byteArrayResource = new ByteArrayResource(buffer);
                 return ResponseEntity.ok()
                         .contentLength(buffer.length)
-                        .contentType(MediaType.parseMediaType("image/png"))
+                        .contentType(MediaType.parseMediaType("image/mp4"))
                         .body(byteArrayResource);
             } catch (IOException e) {
                 e.printStackTrace();

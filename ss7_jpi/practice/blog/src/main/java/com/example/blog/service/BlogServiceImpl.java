@@ -7,6 +7,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BlogServiceImpl implements BlogService {
     @Autowired
@@ -30,5 +32,10 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public void remove(Long id) {
         blogRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Blog> findByContent(String content) {
+        return blogRepository.findByContentContains(content);
     }
 }
