@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img id="img-of-the-day">
+<script>
+    let query = 'https://api.nasa.gov/planetary/apod?api_key=COAoflCrYmCkBQvdgSd5a8OeYH8ItGwQXMJRgrPV';
+    let request = new XMLHttpRequest();
+    request.open('GET', query);
+    request.onload = function() {
+        if (request.status === 200) {
+            let response = JSON.parse(request.responseText);
+            document.getElementById('img-of-the-day').setAttribute('src', response.url);
+        }
+    };
+    request.send();
+</script>
+<form th:action="@{/evaluate}" th:object="${evaluate}" method="get">
+    <label>Evaluate</label>
+    <input type="number" th:field="*{star}">
+    <input th:field="*{id}" hidden>
+    <input th:field="*{numberOfLikes}" hidden>
+    <br>
+    <br>
+        <label>Author</label>
+        <input th:field="*{author}" type="text">
+    <br>
+    <br>
+        <label>Feedback</label>
+        <textarea  th:field="*{feedback}"></textarea>
+    <br>
+    <br>
+        <input type="submit" value="Submit">
+</form>
+<br>
+<h1>Danh sach binh luan</h1>
+<div th:each="l: ${listEvaluate}">
+    <h2 th:text="${l.author}"></h2>
+    <span>+</span>
+    <span th:text="${l.star}"></span>
+    <span th:text="${l.feedback}"></span>
+    <br><br>
+    <a th:href="@{/like/__${l.id}__}">like </a>&emsp;&emsp;
+    <span th:text="${l.numberOfLikes}"></span>&emsp;
+    <span>like</span>
+<!--    <span th:text="${l.like}"></span>-->
+    <hr>
+
+</div>
+</body>
+</html>
+

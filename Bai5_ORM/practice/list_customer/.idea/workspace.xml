@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ff0f0da3-6ec1-40f9-aebe-e1add8cb1d45" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/list_customer/config/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/list_customer/config/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/list_customer/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/list_customer/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/list_customer/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/list_customer/service/impl/HibernateCustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/list_customer/service/impl/SimpleCustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.conf.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/customer/info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/customer/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/classes/com/example/email_configuration/config/AppConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/classes/com/example/email_configuration/config/AppInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/classes/com/example/email_configuration/controller/MailController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/classes/com/example/email_configuration/model/Mail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/classes/com/example/email_configuration/repository/IMailReponsitory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/classes/com/example/email_configuration/repository/impl/MailReponsitory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/classes/com/example/email_configuration/service/IMaiService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/classes/com/example/email_configuration/service/impl/MailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/classes/com/example/themleaf_product_management/config/AppConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/classes/com/example/themleaf_product_management/config/AppInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/classes/com/example/themleaf_product_management/controller/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/classes/com/example/themleaf_product_management/model/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/classes/com/example/themleaf_product_management/service/IProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/classes/com/example/themleaf_product_management/service/impl/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/classes/message.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/lib/spring-aop-5.2.17.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/lib/spring-beans-5.2.17.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/lib/spring-context-5.2.17.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/lib/spring-core-5.2.17.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/lib/spring-expression-5.2.17.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/lib/spring-jcl-5.2.17.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/lib/spring-web-5.2.17.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/lib/spring-webmvc-5.2.17.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/view/product/create.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/view/product/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/views/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/WEB-INF/views/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.71-windows-x64/apache-tomcat-9.0.71/webapps/ROOT/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss1/bt/currency_converter/src/main/java/com/example/currency_converter/CurrencyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss1/bt/currency_converter/src/main/java/com/example/currency_converter/CurrencyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss1/bt/currency_converter/src/main/webapp/WEB-INF/views/USD.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss1/bt/currency_converter/src/main/webapp/WEB-INF/views/USD.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss1/bt/dictionary/src/main/java/com/example/dictionary/controller/DictionaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss1/bt/dictionary/src/main/java/com/example/dictionary/controller/DictionaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss2/caculato/src/main/java/com/example/calculate/controller/ControllerCalculate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss2/caculato/src/main/java/com/example/calculate/controller/ControllerCalculate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss2/caculato/src/main/java/com/example/calculate/service/impl/CalculateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss2/caculato/src/main/java/com/example/calculate/service/impl/CalculateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss2/caculato/src/main/webapp/WEB-INF/views/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss2/caculato/src/main/webapp/WEB-INF/views/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss2/sandwich_condiments/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss2/sandwich_condiments/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/demo/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/demo/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/demo/src/main/java/com/example/TextArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/demo/src/main/java/com/example/TextArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/java/com/example/email_configuration/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/java/com/example/email_configuration/config/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/java/com/example/email_configuration/config/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/java/com/example/email_configuration/config/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/java/com/example/email_configuration/controller/MailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/java/com/example/email_configuration/controller/MailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/java/com/example/email_configuration/model/Mail.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/java/com/example/email_configuration/model/Mail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/java/com/example/email_configuration/repository/IMailReponsitory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/java/com/example/email_configuration/repository/IMailReponsitory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/java/com/example/email_configuration/repository/impl/MailReponsitory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/java/com/example/email_configuration/repository/impl/MailReponsitory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/java/com/example/email_configuration/service/IMaiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/java/com/example/email_configuration/service/IMaiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/java/com/example/email_configuration/service/impl/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/java/com/example/email_configuration/service/impl/MailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/webapp/WEB-INF/views/setting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/webapp/WEB-INF/views/setting.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/email_configuration/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/medical_declaration_form/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/medical_declaration_form/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/medical_declaration_form/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/medical_declaration_form/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/medical_declaration_form/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/medical_declaration_form/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/medical_declaration_form/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/medical_declaration_form/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/medical_declaration_form/src/main/java/com/example/medical_declaration_form/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/medical_declaration_form/src/main/java/com/example/medical_declaration_form/config/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/medical_declaration_form/src/main/java/com/example/medical_declaration_form/config/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/medical_declaration_form/src/main/java/com/example/medical_declaration_form/config/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/medical_declaration_form/src/main/java/com/example/medical_declaration_form/controller/MedicalDeclaretionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/medical_declaration_form/src/main/java/com/example/medical_declaration_form/controller/MedicalDeclaretionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/exercise/medical_declaration_form/src/main/webapp/WEB-INF/views/form_medical_declaration.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/exercise/medical_declaration_form/src/main/webapp/WEB-INF/views/form_medical_declaration.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/form_and_databinding/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/form_and_databinding/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/form_and_databinding/src/main/java/com/example/form_and_databinding/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/form_and_databinding/src/main/java/com/example/form_and_databinding/config/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/form_and_databinding/src/main/java/com/example/form_and_databinding/config/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/form_and_databinding/src/main/java/com/example/form_and_databinding/config/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/form_and_databinding/src/main/java/com/example/form_and_databinding/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/form_and_databinding/src/main/java/com/example/form_and_databinding/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/form_and_databinding/src/main/java/com/example/form_and_databinding/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/form_and_databinding/src/main/java/com/example/form_and_databinding/model/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/form_and_databinding/src/main/webapp/WEB-INF/views/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/form_and_databinding/src/main/webapp/WEB-INF/views/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/form_and_databinding/src/main/webapp/WEB-INF/views/info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/form_and_databinding/src/main/webapp/WEB-INF/views/info.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/spring-user-model/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/spring-user-model/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/upload_file/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/upload_file/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/upload_file/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/upload_file/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/java/com/example/upload_file/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/java/com/example/upload_file/config/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/java/com/example/upload_file/config/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/java/com/example/upload_file/config/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/java/com/example/upload_file/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/java/com/example/upload_file/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/java/com/example/upload_file/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/java/com/example/upload_file/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/java/com/example/upload_file/model/ProductForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/java/com/example/upload_file/model/ProductForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/java/com/example/upload_file/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/java/com/example/upload_file/service/IProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/java/com/example/upload_file/service/impl/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/java/com/example/upload_file/service/impl/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/webapp/WEB-INF/views/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/webapp/WEB-INF/views/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/main/webapp/WEB-INF/views/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/test/resources/upload_file.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss3/practice/upload_file/src/test/resources/upload_file.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../themleaf/exercise/themleaf_product_management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../themleaf/exercise/themleaf_product_management/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../themleaf/exercise/themleaf_product_management/src/main/java/com/example/themleaf_product_management/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../themleaf/exercise/themleaf_product_management/src/main/java/com/example/themleaf_product_management/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../themleaf/exercise/themleaf_product_management/src/main/java/com/example/themleaf_product_management/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../themleaf/exercise/themleaf_product_management/src/main/java/com/example/themleaf_product_management/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../themleaf/exercise/themleaf_product_management/src/main/webapp/WEB-INF/view/product/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../themleaf/exercise/themleaf_product_management/src/main/webapp/WEB-INF/view/product/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../themleaf/exercise/themleaf_product_management/src/main/webapp/WEB-INF/view/product/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../themleaf/exercise/themleaf_product_management/src/main/webapp/WEB-INF/view/product/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../themleaf/exercise/themleaf_product_management/src/main/webapp/WEB-INF/view/product/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../themleaf/exercise/themleaf_product_management/src/main/webapp/WEB-INF/view/product/update.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Tag Library Descriptor" />
+        <option value="spring-beans.schema" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2N22pTzpml2AcUkSQDBgw5QMB3h" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "F:/CODEGYM/Module4/themleaf/exercise/themleaf_product_management",
+    "spring.configuration.checksum": "2e89217943b12303117492f9a009fbdd"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\CODEGYM\Module4\ss5\practice\list_customer\src\main\java\com\example\list_customer\config" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.71" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.71" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="hot-swap-classes" />
+      <deployment>
+        <artifact name="Gradle : com.example : list_customer-1.0-SNAPSHOT.war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="4b660c1f-4e41-46e3-a2b8-d4f6d8983d70" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="49693" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : com.example : list_customer-1.0-SNAPSHOT.war" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ff0f0da3-6ec1-40f9-aebe-e1add8cb1d45" name="Changes" comment="" />
+      <created>1678848042212</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678848042212</updated>
+      <workItem from="1678848044083" duration="1841000" />
+      <workItem from="1678860039752" duration="197000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
