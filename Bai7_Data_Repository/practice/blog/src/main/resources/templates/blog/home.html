@@ -26,8 +26,14 @@
         <li class="nav-item">
           <a class="nav-link" th:href="@{/create}" >Viết bài</a>
         </li>
-          <li class="nav-item">
-              <a class="nav-link" th:href="@{/category}" >Quản lý danh mục</a>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Quản lý danh mục
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" th:href="@{/create_category}">Thêm mới danh mục</a>
+                  <a class="dropdown-item" th:href="@{/list_category}">Hiển thị danh sách danh mục</a>
+              </div>
           </li>
       </ul>
       <form class="form-inline my-2 my-lg-0" action="/search">
@@ -47,14 +53,15 @@
     <div style="color: #005cbf" >
       <h5 style="display: inline-block" th:text="${b.title}"> </h5>
       <span th:text="${b.date}"></span>
+        <span style="margin-left: 350px; font-size: 20px" th:text="${b.category.name}"></span>
       <p  th:text="${b.content}"></p>
     </div>
     <video controls style="margin-left: 30px;height: 600px; width:800px" >
       <source th:src="@{'/getImg/'+${b.linkImg}}" alt="..." >
     </video>
-    <div> <a  href="https://codegym.vn/blog/2020/06/11/truy-van-du-lieu-thong-qua-spring-data-jpa">Xem bai viet</a>
-      <a  th:href="@{/update/__${b.id}__}">Chinh sua</a>
-      <a th:href="@{/remove/__${b.id}__}">Xoa bai viet</a></div>
+    <div> <a  class="btn btn-primary" href="https://codegym.vn/blog/2020/06/11/truy-van-du-lieu-thong-qua-spring-data-jpa">Xem bai viet</a>
+      <a  class="btn btn-primary"  th:href="@{/update/__${b.id}__}">Chinh sua</a>
+      <a  class="btn btn-primary" th:href="@{/remove/__${b.id}__}">Xoa bai viet</a></div>
   <br>
   <br>
   <br>

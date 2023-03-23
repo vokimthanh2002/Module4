@@ -11,12 +11,22 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<div th:insert="~{/home::header}"></div>
-<form action="/create" method="post" th:object="${blog}" enctype="multipart/form-data">
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Tiêu đề</label>
-    <input th:field="*{title}" type="text" class="form-control" id="exampleFormControlInput1">
-  </div>
+<div th:insert="~{blog/home::header}"></div>
+<form action="/update" method="post" th:object="${blog}" enctype="multipart/form-data">
+  <input type="text" hidden="hidden" th:field="*{id}">
+  <input type="text" hidden="hidden" th:field="*{linkImg}">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label >Tieu de</label>
+            <input th:field="*{title}"  class="form-control" >
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputState">Categories</label>
+            <select th:field="*{category}"  id="inputState" class="form-control">
+                <option th:each="c:${categories}" th:value="${c.id}" th:text="${c.name}"></option>
+            </select>
+        </div>
+    </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Nội Dung</label>
     <textarea th:field="*{content}" class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
@@ -25,7 +35,7 @@
     <label for="exampleFormControlFile1">Đăng ảnh</label>
     <input type="file" name="img" class="form-control-file"  id="exampleFormControlFile1">
   </div>
-  <input type="submit" class="btn btn-primary" value="Đăng bài">
+  <input type="submit" class="btn btn-primary" value="Cap nhat">
 </form>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

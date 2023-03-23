@@ -14,21 +14,20 @@ public class Blog {
     private String linkImg;
     private String date;
 
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
     public Blog() {
     }
 
-    public Blog(String title, String content, String linkImg, String date) {
-        this.title = title;
-        this.content = content;
-        this.linkImg = linkImg;
-        this.date = date;
-    }
-
-    public Blog(Long id, String title, String content, String linkImg) {
+    public Blog(Long id, String title, String content, String linkImg, String date, Category category) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.linkImg = linkImg;
+        this.date = date;
+        this.category = category;
     }
 
     public Long getId() {
@@ -69,5 +68,13 @@ public class Blog {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

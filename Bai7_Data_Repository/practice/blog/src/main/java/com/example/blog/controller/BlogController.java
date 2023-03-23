@@ -2,13 +2,11 @@ package com.example.blog.controller;
 
 import com.example.blog.bean.Blog;
 import com.example.blog.service.BlogService;
+import com.example.blog.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Conditional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -31,6 +29,9 @@ import java.util.stream.IntStream;
 public class BlogController {
     @Autowired
     BlogService blogService;
+
+    @Autowired
+    CategoryService categoryService;
 //    @GetMapping(value = "/home")
 //    public String showHome(Model model, @PageableDefault(value = 5) Pageable pageable){
 //        model.addAttribute("blogs",blogService.findAll(pageable));
@@ -56,12 +57,13 @@ public class BlogController {
                     .collect(Collectors.toList());
             model.addAttribute("pageNumbers", pageNumbers);
         }
-        return "home";
+        return "blog/home";
     }
     @GetMapping(value = "/create")
     public String showCreate(Model model){
         model.addAttribute("blog", new Blog());
-        return "create";
+        model.addAttribute("categories",categoryService.findAll());
+        return "blog/create";
     }
 
 
@@ -94,7 +96,8 @@ public class BlogController {
     @GetMapping(value = "update/{id}")
     public String showUpdate(@PathVariable("id") Long id,Model model){
         model.addAttribute("blog",blogService.findById(id));
-        return "/update";
+        model.addAttribute("categories",categoryService.findAll());
+        return "blog/update";
     }
     @PostMapping(value = "/update")
     public String update(@ModelAttribute ("blog") Blog blog, @RequestParam("img") MultipartFile img ){
@@ -125,6 +128,6 @@ public class BlogController {
        }else {
            model.addAttribute("msg","Khoang "+blogService.findByContent(search).size()+" ket qua duoc tim thay");
        }
-       return "/home";
+       return "blog/home";
     }
 }
