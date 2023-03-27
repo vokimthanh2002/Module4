@@ -15,14 +15,15 @@
 <table class="table table-dark">
     <thead>
     <tr>
-        <th scope="col">ID</th>
+        <th scope="col">NO</th>
         <th scope="col">Name Category</th>
         <th scope="col">Chuc nang</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="c: ${categories}">
-        <th th:text="${c.id}" scope="row"></th>
+<!--    <tr th:each="c: ${categories} " >-->
+    <tr  th:each="c, iter: ${categories}" th:object="${c}" >
+        <th th:text="${iter.count}" scope="row"></th>
         <td th:text="${c.name}"></td>
         <td >
             <a  class="btn btn-primary" th:href="@{/delete_category/__${c.id}__}">Delete</a>

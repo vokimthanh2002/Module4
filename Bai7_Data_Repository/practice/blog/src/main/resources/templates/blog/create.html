@@ -5,38 +5,61 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+<style>
+    .validate{
+        color: red;
+    }
+    body{
+        background: black;
+    }
+    .label_form{
+        color: white;
+        font-size: 25px;
+    }
+</style>
 <body>
 <div th:insert="~{blog/home::header}"></div>
-<form action="/create" method="post" th:object="${blog}" enctype="multipart/form-data">
-    <div class="form-row">
+<h1 style="text-align: center; margin-top: 30px; color: white">Create Blog</h1>
+<form  action="/create" method="post" th:object="${blog}" enctype="multipart/form-data">
+    <input th:field="*{id}" hidden>
+    <div class="form-row" >
         <div class="form-group col-md-6">
-            <label >Tieu de</label>
-            <input th:field="*{title}"  class="form-control" >
+            <label class="label_form" >Title</label>
+            <span style="color: red">*</span>
+            <input th:field="*{title}" class="form-control"  placeholder="Title">
+                <span class="validate" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
         </div>
+
         <div class="form-group col-md-4">
-            <label for="inputState">Categories</label>
+            <label class="label_form" for="inputState">Categories</label>
+            <span style="color: red">*</span>
             <select th:field="*{category}"  id="inputState" class="form-control">
                 <option th:each="c:${categories}" th:value="${c.id}" th:text="${c.name}"></option>
             </select>
         </div>
     </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Nội Dung</label>
-    <textarea th:field="*{content}" class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlFile1">Đăng ảnh</label>
-    <input type="file" name="img" class="form-control-file"  id="exampleFormControlFile1">
-  </div>
-  <input type="submit" class="btn btn-primary" value="Đăng bài">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label class="label_form" >Content</label>
+            <span style="color: red">*</span>
+            <textarea th:field="*{content}"  class="form-control"  placeholder="Content"></textarea>
+            <span class="validate" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlFile1" class="text-danger"><i class="fas fa-file-image fa-4x"></i></label>
+        <label class="label_form" for="exampleFormControlFile1">Đăng ảnh</label>
+        <input type="file" name="img" class="form-control-file" style="display: none" accept="image/x-png,image/gif,image/jpeg" id="exampleFormControlFile1">
+    </div>
+
+    <input type="submit" value="Submit"  class="btn btn-success">
 </form>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

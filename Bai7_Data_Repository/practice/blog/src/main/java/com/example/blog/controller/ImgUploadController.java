@@ -28,7 +28,7 @@ public class ImgUploadController {
                 ByteArrayResource byteArrayResource = new ByteArrayResource(buffer);
                 return ResponseEntity.ok()
                         .contentLength(buffer.length)
-                        .contentType(MediaType.parseMediaType("image/mp4"))
+                        .contentType(MediaType.parseMediaType("image/jpg"))
                         .body(byteArrayResource);
             } catch (IOException e) {
                 e.printStackTrace();

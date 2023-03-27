@@ -1,6 +1,7 @@
 package com.example.blog.controller;
 
 import com.example.blog.bean.Blog;
+import com.example.blog.bean.Category;
 import com.example.blog.service.BlogService;
 import com.example.blog.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +10,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -40,15 +41,20 @@ public class BlogController {
 //        }
 //        return "home";
 //    }
+@ModelAttribute("categories")
+public Iterable<Category> categories(){
+    return categoryService.findAll();
+}
+
     @GetMapping(value = "/home")
     public String listpaging(Model model, @RequestParam("page") Optional<Integer> page,
                              @RequestParam("size") Optional<Integer> size,
                              @RequestParam("sort") Optional<String> sort) {
         int currentPage = page.orElse(1);
         int pageSize = size.orElse(5);
-        String sortField = sort.orElse("date");
+        String sortField = sort.orElse("id");
 //        Sort sortBy = Sort.by("email").descending().and(Sort.by("phoneNumber").ascending());
-        Page<Blog> blogs = blogService.findAll(PageRequest.of(currentPage - 1, pageSize, Sort.by(sortField).ascending()));
+        Page<Blog> blogs = blogService.findAll(PageRequest.of(currentPage - 1, pageSize, Sort.by(sortField).descending()));
         model.addAttribute("blogs", blogs);
         int totalPages = blogs.getTotalPages();
         if (totalPages > 1) {
@@ -68,25 +74,30 @@ public class BlogController {
 
 
     @PostMapping(value = "/create")
-    public String save(@ModelAttribute Blog blog, @RequestParam("img") MultipartFile img, RedirectAttributes redirectAttributes){
-        if (img.isEmpty()){
-            blog.setLinkImg("");
+    //loi qq gi ko hieu
+    public String save(@Validated  @ModelAttribute Blog blog, @RequestParam("img") MultipartFile img, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return "blog/create";
+        }else{
+            if (img.isEmpty()){
+                blog.setLinkImg("");
+            }
+            Path path = Paths.get("upload/");
+            try{
+                InputStream inputStream = img.getInputStream();
+                Files.copy(inputStream, path.resolve(img.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
+                blog.setLinkImg(img.getOriginalFilename().toLowerCase());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            LocalDate today = LocalDate.now();
+
+            blog.setDate(String.valueOf(today));
+
+            blogService.save(blog);
+            return "redirect:/home";
         }
-        Path path = Paths.get("upload/");
-        try{
-            InputStream inputStream = img.getInputStream();
-            Files.copy(inputStream, path.resolve(img.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
-            blog.setLinkImg(img.getOriginalFilename().toLowerCase());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        LocalDate today = LocalDate.now();
-
-        blog.setDate(String.valueOf(today));
-
-        blogService.save(blog);
-        return "redirect:/home";
     }
     @GetMapping(value = "remove/{id}")
     public String remove(@PathVariable("id") Long id){
@@ -129,5 +140,10 @@ public class BlogController {
            model.addAttribute("msg","Khoang "+blogService.findByContent(search).size()+" ket qua duoc tim thay");
        }
        return "blog/home";
+    }
+    @GetMapping(value = "category/{id}")
+    public String listCategory(@PathVariable("id") Long id,Model model){
+            model.addAttribute("blogs",blogService.findByCategory_Id(id));
+             return "blog/home";
     }
 }

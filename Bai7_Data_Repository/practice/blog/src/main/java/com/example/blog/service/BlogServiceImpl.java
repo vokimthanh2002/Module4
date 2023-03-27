@@ -38,4 +38,9 @@ public class BlogServiceImpl implements BlogService {
     public List<Blog> findByContent(String content) {
         return blogRepository.findByContentContains(content);
     }
+
+    @Override
+    public List<Blog> findByCategory_Id(Long id) {
+        return blogRepository.findByCategory_Id(id);
+    }
 }

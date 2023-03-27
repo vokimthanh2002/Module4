@@ -17,4 +17,5 @@ public interface BlogService {
 
     void remove(Long id);
     List<Blog> findByContent(String content);
+    List<Blog> findByCategory_Id(Long id);
 }

@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class CategoryController {
     @Autowired
     CategoryService categoryService;
+    @ModelAttribute("categories")
+    public Iterable<Category> categories(){
+        return categoryService.findAll();
+    }
     @GetMapping(value = "/list_category")
     public String showCategory(Model model){
         model.addAttribute("categories",categoryService.findAll());

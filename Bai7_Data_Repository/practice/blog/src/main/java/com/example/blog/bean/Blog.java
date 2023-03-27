@@ -1,15 +1,22 @@
 package com.example.blog.bean;
 
+import org.springframework.validation.annotation.Validated;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
-public class Blog {
+public class Blog  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-//    @Column(columnDefinition = "varchar(10)")
+    @NotBlank
     private String title;
+    @NotBlank
+    @Size(min = 10)
+    @Column(columnDefinition = "text")
     private String content;
     private String linkImg;
     private String date;

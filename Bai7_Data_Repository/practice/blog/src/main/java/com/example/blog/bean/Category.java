@@ -10,8 +10,7 @@ public class Category {
     private Long id;
 
     private String name;
-
-    @OneToMany(targetEntity = Blog.class)
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private List<Blog> customers;
 
     public Category() {
