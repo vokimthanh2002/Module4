@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.validate_music.controller;
 
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.MediaType;
