@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<h2> Tao moi nhan vien </h2>
+<form action="/create_nv" method="post" th:object="${nhanVien}">
+    <div class="form-group">
+        <label >Ten dang nhap</label>
+        <input name="tenDangNhap"  type="text" class="form-control"  placeholder="Ten dang nhap">
+    </div>
+    <div class="form-group">
+        <label >Mat khau</label>
+        <input name="password" type="password" class="form-control"  placeholder="password">
+    </div>
+    <div class="form-group">
+        <label >CCCD</label>
+        <input th:field="*{cccd}" type="text" class="form-control"  placeholder="CCCD">
+    </div>
+    <div class="form-group">
+        <label >Dia chi</label>
+        <input th:field="*{diaChi}" type="text" class="form-control"  placeholder="Dia chi">
+    </div>
+    <div class="form-group">
+        <label >Email</label>
+        <input th:field="*{email}" type="email" class="form-control"  placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label >Gioi tinh</label>
+        <input th:field="*{gioiTinh}" type="text" class="form-control"  placeholder="Gioi tinh">
+    </div>
+    <div class="form-group">
+        <label >Ngay sinh</label>
+        <input th:field="*{ngaySinh}" type="date" class="form-control"  placeholder="Ngay sinh">
+    </div>
+    <div class="form-group">
+        <label >So dien thoai</label>
+        <input th:field="*{sdt}" type="text" class="form-control"  placeholder="So dien thoai">
+    </div>
+    <div class="form-group">
+        <label >Ten nhan vien</label>
+        <input th:field="*{tenNV}" type="text" class="form-control"  placeholder="Ten nhan vien">
+    </div>
+    <select name="chucVu">
+        <option th:each="cv : ${chucVu}"  th:text="${cv.tenQuyen}" th:value="${cv.idQuyen}"></option>
+    </select>
+
+    <input type="submit" value="Hoan tat">
+</form>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+package com.example.quanlythucung.service;
+
+import com.example.quanlythucung.bean.KhachHang;
+
+import java.util.List;
+
+public interface KhachHangService {
+    List<KhachHang> findAllKhachHang();
+    List<KhachHang> findByListKhachHang(String tenDangNhap);
+}

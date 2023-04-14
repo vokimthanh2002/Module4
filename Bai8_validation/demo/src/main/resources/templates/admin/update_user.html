@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/admin/update" method="post" th:object="${user}">
+    <label>Nhap ma tai khoan</label>
+    <input th:field="*{maTaiKhoan}"  placeholder="Nhap ma tai khoan"><br><br>
+    <label>Nhap ten tai khoan</label>
+    <input th:field="*{tenTaiKhoan}"   placeholder="Nhap ten tai khoan"><br><br>
+    <label>Nhap mat khau</label>
+    <input th:field="*{matKhau}"    placeholder="Nhap mat khau"><br><br>
+    <select th:field="*{trangThai}">
+        <option th:each="t:${trangThais}" th:value="${t}" th:text="${t}"></option>
+    </select><br><br>
+    <input type="radio" th:field="*{role}" th:each="r:${roles}" th:value="${r.roleId}" th:text="${r.roleName}" name="role" >
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

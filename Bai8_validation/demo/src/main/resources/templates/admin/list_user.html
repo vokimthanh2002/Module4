@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List User</title>
+</head>
+<body>
+<form action="/admin/search">
+    <label>Tim kiem</label>
+    <input name="inputSearch" placeholder="Search">
+    <input type="submit" value="Search">
+</form>
+<a href="/admin/create">Them moi tai khoan</a>
+<table border="1">
+    <tr>
+        <th>Ma Tai Khoan</th>
+        <th>Ten Tai Khoan</th>
+        <th>Mat Khau</th>
+        <th>Trang Thai</th>
+        <th>Role</th>
+        <th>Chuc Nang</th>
+    </tr>
+    <tr th:each="u: ${users}">
+        <td th:text="${u.maTaiKhoan}"></td>
+        <td th:text="${u.tenTaiKhoan}"></td>
+        <td th:text="${u.matKhau}"></td>
+        <td th:text="${u.trangThai}"></td>
+        <td th:text="${u.role.roleName}"></td>
+        <td>
+            <a th:href="@{/admin/delete/__${u.maTaiKhoan}__}">Xoa tai khoan</a>
+            <a th:href="@{/admin/update/__${u.maTaiKhoan}__}">Chinh sua tai khoan</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

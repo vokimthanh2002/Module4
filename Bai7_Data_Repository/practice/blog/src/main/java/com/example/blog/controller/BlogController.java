@@ -45,6 +45,10 @@ public class BlogController {
 public Iterable<Category> categories(){
     return categoryService.findAll();
 }
+@GetMapping("")
+public String login(){
+    return "blog/login";
+}
 
     @GetMapping(value = "/home")
     public String listpaging(Model model, @RequestParam("page") Optional<Integer> page,
@@ -75,7 +79,7 @@ public Iterable<Category> categories(){
 
     @PostMapping(value = "/create")
     //loi qq gi ko hieu
-    public String save(@Validated  @ModelAttribute Blog blog, @RequestParam("img") MultipartFile img, BindingResult bindingResult){
+    public String save(@Validated  @ModelAttribute Blog blog, BindingResult bindingResult, @RequestParam("img") MultipartFile img){
         if(bindingResult.hasErrors()){
             return "blog/create";
         }else{
