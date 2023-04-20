@@ -39,5 +39,15 @@ public class ChuShopServiceImpl implements ChuShopService {
         return repository.findAll();
     }
 
+    @Override
+    public ChuShop finBYChuShop_IdDichVu(String idDichVu) {
+        return repository.finBYChuShop_IdDichVu(idDichVu);
+    }
+
+    @Override
+    public ChuShop finBYChuShop_IdSanPham(String idSanPham) {
+        return repository.finBYChuShop_IdSanPham(idSanPham);
+    }
+
 
 }

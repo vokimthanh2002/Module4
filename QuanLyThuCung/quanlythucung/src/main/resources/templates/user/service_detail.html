@@ -1,10 +1,186 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Detail service</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="/user/assets/img/favicon.png" rel="icon">
+    <link href="/user/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/user/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="/user/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/user/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/user/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/user/user/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/user/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/user/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="/user/assets/css/style.css" rel="stylesheet">
+    <link href="/user/list/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Sailor
+    * Updated: Mar 10 2023 with Bootstrap v5.2.3
+    * Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
 </head>
+
+
 <body>
+<div th:insert="~{user/index::header}"></div>
+<main id="main">
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details" style="margin-top: 50px">
+        <div class="container">
+
+            <div class="row gy-4" >
+
+                <div class="col-lg-8" style="display:inline-block;">
+                    <div class="portfolio-details-slider swiper">
+                        <div class="swiper-wrapper align-items-center">
+                            <div class="swiper-slide" >
+                                <img   th:src="@{'/getImg/'+${dichVu.linkImg}}" alt="...">
+                            </div>
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4" style="display:inline-block;">
+                    <div class="portfolio-info">
+                        <h1  th:text="${dichVu.idDichVu}" hidden></h1>
+                        <h1  th:text="${dichVu.idDichVu}" hidden></h1>
+                        <h3 th:text="${dichVu.tenDichVu}"></h3>
+                        <ul>
+                            <li th:text="'Ten shop: '+${dichVu.shop.tenShop}"><strong>Ten shop: </strong></li>
+                            <li th:text="'Loai dich vu: '+${dichVu.loaiDichVu}"><strong>Loai dich vu: </strong></li>
+                            <li th:text="'Chi phi: '+${dichVu.chiPhi}+'đ'"><strong>Chi phi: </strong></li>
+                            <li th:text="'Dia chi: '+${dichVu.shop.diaChi}"><strong>Dia chi: </strong></li>
+                            <li th:text="'Email: '+${dichVu.shop.email}" ><strong>Email: </strong></li>
+                            <li th:text="'Hot line: '+${dichVu.shop.hotLine}"><strong>Hot line: </strong></li>
+                        </ul>
+                    </div>
+                    <div style="padding: 30px" class="portfolio-description">
+                        <h2>Mo ta dich vu</h2>
+                        <p  th:text="${dichVu.moTa}"></p>
+                    </div>
+                    <a class="btn btn-outline-success" style="margin-left: 30px" th:href="@{/dkdv/__${dichVu.idDichVu}__}" >Dang ki dich vu</a>
+                    <a class="btn btn-outline-warning" th:href="@{/gh/__${dichVu.idDichVu}__}" >Them vao gio hang</a>
+                </div>
+            </div>
+<!--            thong tin shop-->
+            <nav style="background:#2d4660">
+                <div class="container">
+                    <ul>
+                        <li><a href=""><img style="width: 100px;border-radius: 50%" src="https://media.istockphoto.com/id/1259018485/vi/vec-to/logo-c%E1%BB%ADa-h%C3%A0ng-th%C3%BA-c%C6%B0ng-h%C3%ACnh-minh-h%E1%BB%8Da-vector-thi%E1%BA%BFt-k%E1%BA%BF-ph%E1%BA%B3ng-thi%E1%BA%BFt-k%E1%BA%BF-ch%C3%B3-v%C3%A0-m%C3%A8o-cho-c%E1%BB%ADa-h%C3%A0ng.jpg?s=612x612&w=0&k=20&c=eXr10sod-4CdqURgTBkHAiS7GuBIKxbbCS4V9WKuuak=" alt=""></a></li>
+                        <li><a th:text="${tenChuShop}" href=""></a>  <br> <a class="btn btn-outline-warning" style="color: white" >Xem shop</a><a class="btn btn-outline-secondary" style="color: white;margin:10px">Chat ngay</a></li>
+                        <li><a href=""> San pham  <br> <a th:text="${soLuongSanPham}"  style="color: white" ></a></a></li>
+                        <li><a href=""> Dich vu  <br> <a th:text="${soLuongDichVu}"  style="color: white" ></a></a></li>
+                        <li><a href=""> Ty le phan hoi  <br> <a style="color: white" >98%</a></a></li>
+                        <li><a href=""> Thoi gian phan hoi  <br> <a style="color: white" >trong vai gio</a></a></li>
+                        <li><a href=""> Tham gia vao  <br> <a style="color: white" >2 thang truoc</a></a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!--            cac dich vu co lien quan-->
+            <!--    Dich vu-->
+            <section class="product-galary-one">
+                <div class="container">
+                    <div class="product-galary-one-content">
+                        <div class="product-galary-one-content-title">
+                            <h2>Dịch vụ liên quan</h2>
+                            <ul>
+                                <li><a href="">Dịch vụ chăm sóc chó cảnh</a></li>
+                                <li><a href="">Dịch vụ chăm sóc mèo</a></li>
+                                <li><a href="">Dịch vụ chăm sóc hamster</a></li>
+                                <li><a href="">Xem tất cả các dịch vụ</a></li>
+                            </ul>
+                        </div>
+                        <div class="product-galary-one-content-product" >
+                            <div class="product-galary-one-content-product-item" th:each="dv :${dichVus}">
+                                <img style="max-width: 100%"  th:src="@{'/getImg/'+${dv.linkImg}}" alt="...">
+                                <div class="product-galary-one-content-product-item-text">
+                                    <li><img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/2020/10/content/icon6-50x50.png" alt=""><p> GIẢM 1TR SS WALLET</p></li>
+                                    <li> <a th:text="${dv.tenDichVu}" href="#"></a></li>
+                                    <li> <a th:text="${dv.loaiDichVu}"></a></li>
+                                    <li> <a th:text="${dv.chiPhi}"></a>đ</li>
+                                    <li> <a class="btn btn-outline-success" th:href="@{/dv/__${dv.idDichVu}__}">Xem chi tiết</a></li>
+                                    <li>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div style="text-align: center">
+                <div style=" display: inline-block ;width: 30px;height: 30px; border: 1px solid #008cff; color: #008cff; " th:if="${dichVus.totalPages > 0}"
+                     th:each="pageNumber : ${pageNumbers}">
+                    <a  th:href="@{/services(size=${dichVus.size}, page=${pageNumber})}"
+                        th:text="${pageNumber}"
+                        th:class="${pageNumber==dichVus.number + 1} ? active"></a>
+                </div>
+            </div>
+
+
+        </div>
+    </section><!-- End Portfolio Details Section -->
+
+
+</main><!-- End #main -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<div th:insert="~{user/index::footer}"></div>
+<!-- Vendor JS Files -->
+<script src="/user/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/user/assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="/user/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="/user/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="/user/assets/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="/user/assets/vendor/php-email-form/validate.js"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<!-- Template Main JS File -->
+<script src="/user/assets/js/main.js"></script>
+<script src="/user/list/script.js"></script>
 
 </body>
+
 </html>

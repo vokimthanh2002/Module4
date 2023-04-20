@@ -29,6 +29,11 @@ public class ShopServiceImpl implements ShopService {
     }
 
     @Override
+    public Shop findById(String id) {
+        return repository.findById(id).orElse(null);
+    }
+
+    @Override
     public List<Shop> findAllShop() {
         return repository.findAll();
     }
@@ -42,4 +47,16 @@ public class ShopServiceImpl implements ShopService {
     public Shop findByChuShop_TaiKhoan_TenDangNhap(String tenDangNhap) {
         return repository.findByChuShop_TaiKhoan_TenDangNhap(tenDangNhap);
     }
+
+    @Override
+    public Shop findByIdDichVu(String idDichVu) {
+        return repository.findByIdDichVu(idDichVu);
+    }
+
+    @Override
+    public List<Shop> findByTrangThai(String trangThai) {
+        return repository.findByTrangThai(trangThai);
+    }
+
+
 }

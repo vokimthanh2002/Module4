@@ -31,7 +31,7 @@ public class AdminController {
     public String showListUser(Model model, HttpServletResponse response, HttpSession session){
         TaiKhoan user = (TaiKhoan) session.getAttribute("user_logiin");
         if (user == null || "".equals(user)||!user.getQuyen().getIdQuyen().equals("rule-admin")) {
-            return "redirect:/login";
+            return "redirect:/error_404";
         }
         List<TaiKhoan> users = userService.getAllUser();
         model.addAttribute("users",users);
@@ -41,7 +41,7 @@ public class AdminController {
     public String showListCs(Model model, HttpServletResponse response, HttpSession session){
         TaiKhoan user = (TaiKhoan) session.getAttribute("user_logiin");
         if (user == null || "".equals(user)||!user.getQuyen().getIdQuyen().equals("rule-admin")) {
-            return "redirect:/login";
+            return "redirect:/error_404";
         }
         List<ChuShop> chuShops = chuShopService.findAllChuShop();
         model.addAttribute("chuShops",chuShops);
@@ -52,18 +52,29 @@ public class AdminController {
     public String showListShop(Model model, HttpServletResponse response, HttpSession session){
         TaiKhoan user = (TaiKhoan) session.getAttribute("user_logiin");
         if (user == null || "".equals(user)||!user.getQuyen().getIdQuyen().equals("rule-admin")) {
-            return "redirect:/login";
+            return "redirect:/error_404";
         }
-        List<Shop> shops = shopService.findAllShop();
+        List<Shop> shops = shopService.findByTrangThai("Da duyet");
         model.addAttribute("shops",shops);
         return "admin/list_shop";
+    }
+
+    @GetMapping(value = "/list_shop_cho_duyet")
+    public String showListShopChoDuyet(Model model, HttpServletResponse response, HttpSession session){
+        TaiKhoan user = (TaiKhoan) session.getAttribute("user_logiin");
+        if (user == null || "".equals(user)||!user.getQuyen().getIdQuyen().equals("rule-admin")) {
+            return "redirect:/error_404";
+        }
+        List<Shop> shops = shopService.findByTrangThai("Chua duyet");
+        model.addAttribute("shops",shops);
+        return "admin/list_shop_cd";
     }
 
     @GetMapping(value = "/delete/{id}")
     public String deleteUser(@PathVariable("id") String tenDangNhap, HttpServletResponse response, HttpSession session){
         TaiKhoan user = (TaiKhoan) session.getAttribute("user_logiin");
         if (user == null || "".equals(user)||!user.getQuyen().getIdQuyen().equals("rule-admin")) {
-            return "redirect:/login";
+            return "redirect:/error_404";
         }
         TaiKhoan userDelete = userService.finById(tenDangNhap);
         userService.deleteUser(userDelete);
@@ -74,7 +85,7 @@ public class AdminController {
     public String openUser(@PathVariable("id") String tenDangNhap, HttpServletResponse response, HttpSession session){
         TaiKhoan user = (TaiKhoan) session.getAttribute("user_logiin");
         if (user == null || "".equals(user)||!user.getQuyen().getIdQuyen().equals("rule-admin")) {
-            return "redirect:/login";
+            return "redirect:/error_404";
         }
         TaiKhoan userOpen = userService.finById(tenDangNhap);
         userOpen.setTrangThai("Mo");
@@ -86,13 +97,17 @@ public class AdminController {
     public String blockUser(@PathVariable("id") String tenDangNhap, HttpServletResponse response, HttpSession session){
         TaiKhoan user = (TaiKhoan) session.getAttribute("user_logiin");
         if (user == null || "".equals(user)||!user.getQuyen().getIdQuyen().equals("rule-admin")) {
-            return "redirect:/login";
+            return "redirect:/error_404";
         }
         TaiKhoan userBlock = userService.finById(tenDangNhap);
         userBlock.setTrangThai("Khoa");
         userService.updateUser(userBlock);
         return "redirect:/list_user";
     }
-
+    @GetMapping(value = "/duyetshop/{id}")
+    public String duyetShop(@PathVariable("id") String id,Model model){
+        model.addAttribute("shop",shopService.findById(id));
+        return "admin/profile_cs";
+    }
 
 }

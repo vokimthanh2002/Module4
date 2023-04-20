@@ -16,11 +16,29 @@ public class ChuShop {
     private String sdt;
     private String email;
     private String diaChi;
+    private String matTruocCCCD;
+    private String matSauCCCD;
     @OneToOne
     @JoinColumn(name = "tenDangNhap", referencedColumnName = "tenDangNhap")
     private TaiKhoan taiKhoan;
 
     public ChuShop() {
+    }
+
+    public String getMatTruocCCCD() {
+        return matTruocCCCD;
+    }
+
+    public void setMatTruocCCCD(String matTruocCCCD) {
+        this.matTruocCCCD = matTruocCCCD;
+    }
+
+    public String getMatSauCCCD() {
+        return matSauCCCD;
+    }
+
+    public void setMatSauCCCD(String matSauCCCD) {
+        this.matSauCCCD = matSauCCCD;
     }
 
     public String getIdChuShop() {

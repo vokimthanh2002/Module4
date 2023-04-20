@@ -24,6 +24,7 @@
   <link href="user/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="user/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="user/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="user/list/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="user/assets/css/style.css" rel="stylesheet">
@@ -38,49 +39,6 @@
 </head>
 
 <body>
-
-  <!-- ======= Header ======= -->
-<!--  <header id="header" class="fixed-top d-flex align-items-center">-->
-<!--    <div class="container d-flex align-items-center">-->
-
-<!--      <h1 class="logo me-auto"><a href="list_user.html">Sailor</a></h1>-->
-<!--      &lt;!&ndash; Uncomment below if you prefer to use an image logo &ndash;&gt;-->
-<!--      &lt;!&ndash; <a href="signup.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>&ndash;&gt;-->
-
-<!--      <nav id="navbar" class="navbar">-->
-<!--        <ul>-->
-<!--          <li><a href="list_user.html">Home</a></li>-->
-
-<!--          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>-->
-<!--            <ul>-->
-<!--              <li><a href="about.html">About</a></li>-->
-<!--              <li><a href="team.html">Team</a></li>-->
-<!--              <li><a href="testimonials.html">Testimonials</a></li>-->
-
-<!--              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>-->
-<!--                <ul>-->
-<!--                  <li><a href="#">Deep Drop Down 1</a></li>-->
-<!--                  <li><a href="#">Deep Drop Down 2</a></li>-->
-<!--                  <li><a href="#">Deep Drop Down 3</a></li>-->
-<!--                  <li><a href="#">Deep Drop Down 4</a></li>-->
-<!--                  <li><a href="#">Deep Drop Down 5</a></li>-->
-<!--                </ul>-->
-<!--              </li>-->
-<!--            </ul>-->
-<!--          </li>-->
-<!--          <li><a href="services.html" class="active">Services</a></li>-->
-<!--          <li><a href="portfolio.html">Portfolio</a></li>-->
-<!--          <li><a href="pricing.html">Pricing</a></li>-->
-<!--          <li><a href="blog.html">Blog</a></li>-->
-
-<!--          <li><a href="contact.html">Contact</a></li>-->
-<!--          <li><a href="list_user.html" class="getstarted">Get Started</a></li>-->
-<!--        </ul>-->
-<!--        <i class="bi bi-list mobile-nav-toggle"></i>-->
-<!--      </nav>&lt;!&ndash; .navbar &ndash;&gt;-->
-
-<!--    </div>-->
-<!--  </header>&lt;!&ndash; End Header &ndash;&gt;-->
   <div th:insert="~{user/index::header}"></div>
 
   <main id="main">
@@ -90,9 +48,9 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Services</h2>
+          <h2>Dich Vu</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li>Services</li>
           </ol>
         </div>
@@ -100,31 +58,140 @@
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    <nav style="background:#2d4660">
       <div class="container">
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="icon-box">
-              <i class="bi bi-briefcase"></i>
-              <h4><a href="#">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+        <ul>
+          <li><a href=""><img style="width: 150px;" src="https://media.istockphoto.com/id/1259018485/vi/vec-to/logo-c%E1%BB%ADa-h%C3%A0ng-th%C3%BA-c%C6%B0ng-h%C3%ACnh-minh-h%E1%BB%8Da-vector-thi%E1%BA%BFt-k%E1%BA%BF-ph%E1%BA%B3ng-thi%E1%BA%BFt-k%E1%BA%BF-ch%C3%B3-v%C3%A0-m%C3%A8o-cho-c%E1%BB%ADa-h%C3%A0ng.jpg?s=612x612&w=0&k=20&c=eXr10sod-4CdqURgTBkHAiS7GuBIKxbbCS4V9WKuuak=" alt=""></a></li>
+          <li id="adress-form"><a href="#">Đà Nẵng <i class="fas fa-sort-down "></i></a></li>
+          <form  action="/searchDichVu">
+            <input  name="inputSearchDv" type="text" placeholder="Tim kiem dich vu">
+            <button type="submit"><i class="bi bi-search"></i></button>
+          </form>
+<!--          <li>-->
+<!--            <button type="button" class="btn btn-outline-warning">-->
+<!--              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">-->
+<!--                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>-->
+<!--              </svg>-->
+<!--              Giỏ hàng-->
+<!--            </button>-->
+<!--          </li>-->
+          <li><a href="">Lịch sử  <br> đăng kí dịch vụ </a></li>
+          <li><a href=""><span class="btn-content"><span class="btn-top"></span></span> Nhận ngay ưu đãi!</a></li>
+          <li><a href="">Liên hệ </a></li>
+          <li><a href="">Hỏi đáp </a></li>
+          <li><a href="">Dịch vụ </a></li>
+          <div class="adress-form">
+            <div class="adress-form-content">
+              <h2>Chọn địa chỉ nhận hàng <span id="adress-close">X Đóng </span> </h2>
+              <form action="">
+                <p> Chọn đầy đủ địa chỉ nhận hàng để biết thời gian giao</p>
+                <select name="" >
+                  <option value="#">--Chọn địa điểm</option>
+                  <option value="#">--Đà Nẵng</option>
+                </select>
+                <select name="" >
+                  <option value="#">--Chọn Quận\Huyện</option>
+                  <option value="#">--Đà Nẵng</option>
+                </select>
+                <select name="" >
+                  <option value="#">--Chọn Phường\Xã</option>
+                  <option value="#">--Đà Nẵng</option>
+                </select>
+                <input type="text"placeholder="Số nhà , Tên đường">
+                <button>Xác nhận</button>
+              </form>
             </div>
           </div>
-          <div th:each="dv :${dichVus}" class="col-md-6 mt-4 mt-md-0 ">
-            <div class="icon-box">
-<!--              <i class="bi"> <img  width="10%" height="10%" th:src="@{'/getImg/'+${dv.linkImg}}" alt="..."></i>-->
-              <h4><a th:text="${dv.tenDichVu}" href="#"></a></h4>
-              <p th:text="${dv.moTa}"></p>
-             <a style="margin-left: 400px" th:href="@{/dkdv/__${dv.idDichVu}__}" class="getstarted">Xem chi tiet</a>
-            </div>
-          </div>
-
-        </div>
-
+        </ul>
       </div>
-    </section><!-- End Services Section -->
+    </nav>
+
+    <!---------------Silder-------------->
+    <section class="slider">
+      <div class="container">
+        <div class="slider-content">
+          <div class="slider-content-left">
+            <div class="slider-content-left-top-container">
+              <div class="slider-content-left-top">
+                <a href=""><img src="data:image/jpeg;base64,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" alt=""></a>
+                <a href=""><img src="https://vnn-imgs-f.vgcloud.vn/2020/04/20/09/thu-cung-2.jpg" alt=""></a>
+                <a href=""><img src="https://cdnimg.vietnamplus.vn/uploaded/aobjahw/2021_11_30/img_5243.jpg" alt=""></a>
+                <a href=""><img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2021/2/10/879621/Thu-Cung-1-1.JPG" alt=""></a>
+                <a href=""><img src="https://jobsgo.vn/blog/wp-content/uploads/2022/03/Hoc-nghe-cham-soc-thu-cung-o-dau-1.jpg" alt=""></a>
+                <a href=""><img src="https://jandpet.com.vn/wp-content/uploads/2020/08/cat-tia-long-cho-cho-jandpetjpg.jpg" alt=""></a>
+                <a href=""><img src="https://hstatic.net/210/1000192210/2659.jpg" alt=""></a>
+                <a href=""><img src="https://phongkhamthuytenlua.vn/wp-content/uploads/2022/11/dich-vu-cham-soc-thu-cung-1.png" alt=""></a>
+                <a href=""><img src="https://ohay.vn/blog/wp-content/uploads/2020/02/family-vet-6.png" alt=""></a>
+
+              </div>
+              <div class="slider-content-left-top-btn">
+                <i class="fas fa-chevron-left"></i>
+                <i class="fas fa-chevron-right"></i>
+              </div>
+            </div>
+            <div class="slider-content-left-bottom">
+              <li class="active"> Dịch vụ chăm sóc chó cảnh giảm đến 100k </li>
+              <li > Đăng kí dịch vụ lần đầu giảm đến 30%</li>
+              <li > Siêu khuyêns mãi đặt biệt dành cho tháng 4</li>
+              <li > Sản phẩm dành cho thú cưng giảm 10%</li>
+              <li > Đăng kí trở thành chủ shop nhận ngay những ưu đãi cực hot</li>
+            </div>
+          </div>
+          <div class="slider-content-right">
+            <li><a href=""><img src="https://vnn-imgs-f.vgcloud.vn/2020/04/20/09/thu-cung-2.jpg" alt=""></a></li>
+            <li><a href=""><img src="https://hstatic.net/210/1000192210/2659.jpg" alt=""></a></li>
+            <li><a href=""><img src="https://ohay.vn/blog/wp-content/uploads/2020/02/family-vet-6.png" alt=""></a></li>
+            <li><a href=""><img src="https://phongkhamthuytenlua.vn/wp-content/uploads/2022/11/dich-vu-cham-soc-thu-cung-1.png" alt=""></a></li>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!--    Dich vu-->
+    <section class="product-galary-one">
+      <div class="container">
+        <div class="product-galary-one-content">
+          <div class="product-galary-one-content-title">
+            <h2>Dịch vụ được quan tâm nhất</h2>
+            <ul>
+              <li><a href="">Dịch vụ chăm sóc chó cảnh</a></li>
+              <li><a href="">Dịch vụ chăm sóc mèo</a></li>
+              <li><a href="">Dịch vụ chăm sóc hamster</a></li>
+              <li><a href="">Xem tất cả các dịch vụ</a></li>
+            </ul>
+          </div>
+          <div class="product-galary-one-content-product" >
+            <div class="product-galary-one-content-product-item" th:each="dv :${dichVus}">
+              <img style="max-width: 100%"  th:src="@{'/getImg/'+${dv.linkImg}}" alt="...">
+              <div class="product-galary-one-content-product-item-text">
+                <li><img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/2020/10/content/icon6-50x50.png" alt=""><p> GIẢM 1TR SS WALLET</p></li>
+                <li> <a th:text="${dv.tenDichVu}" href="#"></a></li>
+                <li> <a th:text="${dv.loaiDichVu}"></a></li>
+                <li> <a th:text="${dv.chiPhi}"></a>đ</li>
+                <li> <a class="btn btn-outline-success" th:href="@{/dv/__${dv.idDichVu}__}">Xem chi tiết</a></li>
+                <li>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </li>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div style="text-align: center">
+      <div style=" display: inline-block ;width: 30px;height: 30px; border: 1px solid #008cff; color: #008cff; " th:if="${dichVus.totalPages > 0}"
+           th:each="pageNumber : ${pageNumbers}">
+        <a  th:href="@{/services(size=${dichVus.size}, page=${pageNumber})}"
+           th:text="${pageNumber}"
+           th:class="${pageNumber==dichVus.number + 1} ? active"></a>
+      </div>
+    </div>
+
+
 
     <!-- ======= Features Section ======= -->
     <section id="features" class="features">
@@ -310,6 +377,7 @@
   <script src="user/assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="user/assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="user/assets/vendor/php-email-form/validate.js"></script>
+  <script src="user/list/script.js"></script>
 
   <!-- Template Main JS File -->
   <script src="user/assets/js/main.js"></script>

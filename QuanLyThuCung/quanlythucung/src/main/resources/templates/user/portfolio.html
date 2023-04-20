@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Portfolio - Sailor Bootstrap Template</title>
+  <title>Services - Sailor Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -24,6 +24,7 @@
   <link href="user/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="user/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="user/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="user/list/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="user/assets/css/style.css" rel="stylesheet">
@@ -38,219 +39,268 @@
 </head>
 
 <body>
+<div th:insert="~{user/index::header}"></div>
 
-  <!-- ======= Header ======= -->
-<!--  <header id="header" class="fixed-top d-flex align-items-center">-->
-<!--    <div class="container d-flex align-items-center">-->
+<main id="main">
 
-<!--      <h1 class="logo me-auto"><a href="list_user.html">Sailor</a></h1>-->
-<!--      &lt;!&ndash; Uncomment below if you prefer to use an image logo &ndash;&gt;-->
-<!--      &lt;!&ndash; <a href="signup.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>&ndash;&gt;-->
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
 
-<!--      <nav id="navbar" class="navbar">-->
-<!--        <ul>-->
-<!--          <li><a href="list_user.html">Home</a></li>-->
-
-<!--          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>-->
-<!--            <ul>-->
-<!--              <li><a href="about.html">About</a></li>-->
-<!--              <li><a href="team.html">Team</a></li>-->
-<!--              <li><a href="testimonials.html">Testimonials</a></li>-->
-
-<!--              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>-->
-<!--                <ul>-->
-<!--                  <li><a href="#">Deep Drop Down 1</a></li>-->
-<!--                  <li><a href="#">Deep Drop Down 2</a></li>-->
-<!--                  <li><a href="#">Deep Drop Down 3</a></li>-->
-<!--                  <li><a href="#">Deep Drop Down 4</a></li>-->
-<!--                  <li><a href="#">Deep Drop Down 5</a></li>-->
-<!--                </ul>-->
-<!--              </li>-->
-<!--            </ul>-->
-<!--          </li>-->
-<!--          <li><a href="services.html">Services</a></li>-->
-<!--          <li><a href="portfolio.html" class="active">Portfolio</a></li>-->
-<!--          <li><a href="pricing.html">Pricing</a></li>-->
-<!--          <li><a href="blog.html">Blog</a></li>-->
-
-<!--          <li><a href="contact.html">Contact</a></li>-->
-<!--          <li><a href="list_user.html" class="getstarted">Get Started</a></li>-->
-<!--        </ul>-->
-<!--        <i class="bi bi-list mobile-nav-toggle"></i>-->
-<!--      </nav>&lt;!&ndash; .navbar &ndash;&gt;-->
-
-<!--    </div>-->
-<!--  </header>&lt;!&ndash; End Header &ndash;&gt;-->
-  <div th:insert="~{user/index::header}"></div>
-
-  <main id="main">
-
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Portolio</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Portolio</li>
-          </ol>
-        </div>
-
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>San Pham</h2>
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li>San Pham</li>
+        </ol>
       </div>
-    </section><!-- End Breadcrumbs -->
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
+    </div>
+  </section><!-- End Breadcrumbs -->
 
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
+  <nav style="background:#2d4660">
+    <div class="container">
+      <ul>
+        <li><a href=""><img style="width: 150px;" src="https://media.istockphoto.com/id/1259018485/vi/vec-to/logo-c%E1%BB%ADa-h%C3%A0ng-th%C3%BA-c%C6%B0ng-h%C3%ACnh-minh-h%E1%BB%8Da-vector-thi%E1%BA%BFt-k%E1%BA%BF-ph%E1%BA%B3ng-thi%E1%BA%BFt-k%E1%BA%BF-ch%C3%B3-v%C3%A0-m%C3%A8o-cho-c%E1%BB%ADa-h%C3%A0ng.jpg?s=612x612&w=0&k=20&c=eXr10sod-4CdqURgTBkHAiS7GuBIKxbbCS4V9WKuuak=" alt=""></a></li>
+        <li id="adress-form"><a href="#">Đà Nẵng <i class="fas fa-sort-down "></i></a></li>
+        <form  action="/searchDichVu">
+          <input  name="inputSearchDv" type="text" placeholder="Tim kiem san pham">
+          <button type="submit"><i class="bi bi-search"></i></button>
+        </form>
+        <li>
+          <button type="button" class="btn btn-outline-warning">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+            </svg>
+            Giỏ hàng <span th:text="${list.size()}"></span>
+          </button>
+        </li>
+<!--        <li><a href="">Lịch sử  <br> đăng kí dịch vụ </a></li>-->
+        <li><a href=""><span class="btn-content"><span class="btn-top"></span></span> Nhận ngay ưu đãi!</a></li>
+        <li><a href="">Liên hệ </a></li>
+        <li><a href="">Hỏi đáp </a></li>
+        <li><a href="">Sản phẩm </a></li>
+        <div class="adress-form">
+          <div class="adress-form-content">
+            <h2>Chọn địa chỉ nhận hàng <span id="adress-close">X Đóng </span> </h2>
+            <form action="">
+              <p> Chọn đầy đủ địa chỉ nhận hàng để biết thời gian giao</p>
+              <select name="" >
+                <option value="#">--Chọn địa điểm</option>
+                <option value="#">--Đà Nẵng</option>
+              </select>
+              <select name="" >
+                <option value="#">--Chọn Quận\Huyện</option>
+                <option value="#">--Đà Nẵng</option>
+              </select>
+              <select name="" >
+                <option value="#">--Chọn Phường\Xã</option>
+                <option value="#">--Đà Nẵng</option>
+              </select>
+              <input type="text"placeholder="Số nhà , Tên đường">
+              <button>Xác nhận</button>
+            </form>
           </div>
         </div>
+      </ul>
+    </div>
+  </nav>
 
-        <div class="row portfolio-container">
+  <!---------------Silder-------------->
+  <section class="slider">
+    <div class="container">
+      <div class="slider-content">
+        <div class="slider-content-left">
+          <div class="slider-content-left-top-container">
+            <div class="slider-content-left-top">
+              <a href=""><img src="https://petsland.vn/wp-content/uploads/2022/07/pets-land-banner1.jpg" alt=""></a>
+              <a href=""><img src="https://mfamilypet.com/upload/elfinder/bi-quyet-cham-soc-thu-cung-voi-nhung-san-pham-gia-tot-phu-hop-nhat5.png" alt=""></a>
+              <a href=""><img src="https://www.vuaphukienthucung.com/public/media/images/thiet-ke-hinh-anh-phu-kien-thu-cung-02.jpg" alt=""></a>
+              <a href=""><img src="https://thietkedocmac.com/uploads/2020-02-12/postalbum/294-thiet-ke-san-pham-bao-bi-thuc-an-thu-cung.jpg" alt=""></a>
+              <a href=""><img src="https://thietkedocmac.com/uploads/2020-02-12/postalbum/293-thiet-ke-san-pham-bao-bi-thuc-an-thu-cung.jpg" alt=""></a>
+              <a href=""><img src="https://thietkedocmac.com/uploads/2020-02-12/postalbum/296-thiet-ke-san-pham-bao-bi-thuc-an-thu-cung.jpg" alt=""></a>
+              <a href=""><img src="https://meocun.com/wp-content/uploads/si3.png" alt=""></a>
+              <a href=""><img src="https://theme.hstatic.net/1000238938/1000576591/14/banner_collection.jpg?v=357" alt=""></a>
+              <a href=""><img src="https://hikatopharma.com/wp-content/uploads/2021/07/top-5-cong-ty-phan-phoi-thuc-pham-thu-cung-tot-nhat-viet-nam-1.jpg" alt=""></a>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
+            </div>
+            <div class="slider-content-left-top-btn">
+              <i class="fas fa-chevron-left"></i>
+              <i class="fas fa-chevron-right"></i>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
+          <div class="slider-content-left-bottom">
+            <li class="active"> Thức ăn cho chó giảm 50% </li>
+            <li > Đăng kí dịch vụ lần đầu giảm đến 30%</li>
+            <li > Siêu khuyêns mãi đặt biệt dành cho tháng 4</li>
+            <li > Sản phẩm dành cho thú cưng giảm 10%</li>
+            <li > Đăng kí trở thành chủ shop nhận ngay những ưu đãi cực hot</li>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
-
+        <div class="slider-content-right">
+          <li><a href=""><img src="https://www.petmart.vn/wp-content/uploads/2019/04/pate-cho-cho-vi-thit-bo-iris-one-care-beef100g.jpg" alt=""></a></li>
+          <li><a href=""><img src="https://www.petmart.vn/wp-content/uploads/2021/05/sot-pate-cho-cho-vi-gan-va-uc-ga-inaba-chicken-breast-liver-400x400.jpg" alt=""></a></li>
+          <li><a href=""><img src="https://www.petmart.vn/wp-content/uploads/2012/08/pate-cho-cho-nuoc-sot-vi-thit-bo-pedigree-pouch-beef-400x400.jpg" alt=""></a></li>
+          <li><a href=""><img src="https://www.petmart.vn/wp-content/uploads/2019/04/pate-cho-cho-vi-ca-iris-one-care-fish100g-400x400.jpg" alt=""></a></li>
+        </div>
       </div>
-    </section><!-- End Portfolio Section -->
+    </div>
+  </section>
+// san pham
+  <section class="product-galary-one">
+    <div class="container">
+      <div class="product-galary-one-content">
+        <div class="product-galary-one-content-title">
+          <h2>Các sản phẩm bán chạy nhất</h2>
+          <ul>
+            <li><a href="">Thức ăn cho chó con cỡ nhỏ Mini Puppy</a></li>
+            <li><a href="">Thức ăn cho chó Poodle con ROYAL CANIN Poodle Puppy</a></li>
+            <li><a href="">Thức ăn cho chó hạt mềm vị thịt bò JERHIGH Beef Recipe</a></li>
+            <li><a href="">Xem tất cả các sanr phẩm</a></li>
+          </ul>
+        </div>
+        <div style="margin:5px" class="product-galary-one-content-product">
+          <div class="product-galary-one-content-product-item" th:each="sp :${sanPhams}">
+            <!--              <img style="max-width: 100%"  th:src="@{'/getImg/'+${sp.linkImg}}" alt="...">-->
+            <img style="max-width: 100%"  th:src="@{${sp.linkImg}}" alt="...">
+            <div class="product-galary-one-content-product-item-text">
+              <li><img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/2020/10/content/icon6-50x50.png" alt=""><p> GIẢM 1TR SS WALLET</p></li>
+              <li> <a th:text="${sp.tenSanPham}" href="#"></a></li>
+              <li> <a th:text="${sp.gia}"></a>đ</li>
+              <li> <a th:text="${sp.shop.tenShop}"></a></li>
+              <li> <a class="btn btn-outline-success" th:href="@{/sp/__${sp.idSanPham}__}">Xem chi tiết</a>
+                <a th:href="@{/cart/add-to-cart/__${sp.idSanPham}__}" type="button" class="btn btn-outline-warning">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+                  </svg>
+                  Giỏ hàng
+                </a>
+              </li>
+              <li>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div style="text-align: center">
+    <div style=" display: inline-block ;width: 30px;height: 30px; border: 1px solid #008cff; color: #008cff; " th:if="${dichVus.totalPages > 0}"
+         th:each="pageNumber : ${pageNumbers}">
+      <a  th:href="@{/services(size=${dichVus.size}, page=${pageNumber})}"
+          th:text="${pageNumber}"
+          th:class="${pageNumber==dichVus.number + 1} ? active"></a>
+    </div>
+  </div>
 
-  </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
+
+  <!-- ======= Features Section ======= -->
+  <section id="features" class="features">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Features</h2>
+        <p>Check our Features</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3">
+          <ul class="nav nav-tabs flex-column">
+            <li class="nav-item">
+              <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Modi sit est</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Unde praesentium sed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Pariatur explicabo vel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Nostrum qui quasi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Iusto ut expedita aut</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-9 mt-4 mt-lg-0">
+          <div class="tab-content">
+            <div class="tab-pane active show" id="tab-1">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Architecto ut aperiam autem id</h3>
+                  <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+                  <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="user/assets/img/features-1.png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab-2">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Et blanditiis nemo veritatis excepturi</h3>
+                  <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+                  <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="user/assets/img/features-2.png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab-3">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
+                  <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
+                  <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="user/assets/img/features-3.png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab-4">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
+                  <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
+                  <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="user/assets/img/features-4.png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab-5">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
+                  <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
+                  <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="user/assets/img/features-5.png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Features Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
 <!--  <footer id="footer">-->
 <!--    <div class="footer-top">-->
 <!--      <div class="container">-->
@@ -323,20 +373,21 @@
 <!--      </div>-->
 <!--    </div>-->
 <!--  </footer>&lt;!&ndash; End Footer &ndash;&gt;-->
-  <div th:insert="~{user/index::footer}"></div>
+<div th:insert="~{user/index::footer}"></div>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="user/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="user/assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="user/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="user/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="user/assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="user/assets/vendor/php-email-form/validate.js"></script>
+<!-- Vendor JS Files -->
+<script src="user/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="user/assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="user/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="user/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="user/assets/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="user/assets/vendor/php-email-form/validate.js"></script>
+<script src="user/list/script.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="user/assets/js/main.js"></script>
+<!-- Template Main JS File -->
+<script src="user/assets/js/main.js"></script>
 
 </body>
 

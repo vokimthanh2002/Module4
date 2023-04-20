@@ -49,6 +49,7 @@
             <li><i class="fa fa-puzzle-piece"></i><a href="/list_user">Danh sách user</a></li>
             <li><i class="fa fa-id-badge"></i><a href="/list_cs">Danh sách chủ shop</a></li>
             <li><i class="fa fa-id-badge"></i><a href="/list_shop">Danh sách shop</a></li>
+            <li><i class="fa fa-id-badge"></i><a href="/list_shop_cho_duyet">Danh sách shop chờ duyệt</a></li>
           </ul>
         </li>
         <li class="menu-item-has-children dropdown">
@@ -252,7 +253,10 @@
                   <th th:text="${s.email}"></th>
                   <th th:text="${s.moTa}"></th>
                   <th th:text="${s.ngayDK}"></th>
-                  <th th:text="${s.trangThai}"></th>
+                  <th>
+                    <span style="color: #00cc00" th:if="${s.trangThai!='Chua duyet'}" th:text="${s.trangThai}"></span>
+                  </th>
+
 <!--                  <th >-->
 <!--                    <a class="btn btn-dark" th:href="@{/delete/__${u.tenDangNhap}__}">Xoa tai khoan</a>-->
 <!--                    <a th:if="${u.trangThai!='Mo'}" class="btn btn-success" th:href="@{/open/__${u.tenDangNhap}__}">Mo</a>-->

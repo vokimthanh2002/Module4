@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+                        <table border="1px">
+                            <tr>
+                                <th>Ho va ten chu shop</th>
+                                <th th:text="${shop.chuShop.tenChuShop}"></th>
+                            </tr>
+                            <tr>
+                                <th>Ten shop</th>
+                                <th th:text="${shop.tenShop}"></th>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <th th:text="${shop.email}"></th>
+                            </tr>
+                            <tr>
+                                <th>Gioi tinh</th>
+                                <th th:text="${shop.chuShop.gioiTinh}"></th>
+                            </tr>
+                            <tr>
+                                <th>Dia chi</th>
+                                <th th:text="${shop.diaChi}"></th>
+                            </tr>
+                            <tr>
+                                <th>Ngay dinh</th>
+                                <th th:text="${shop.chuShop.ngaySinh}"></th>
+                            </tr>
+                            <tr>
+                                <th>So dien thoai</th>
+                                <th th:text="${shop.chuShop.sdt}"></th>
+                            </tr>
+                            <tr>
+                                <th>So CCCD</th>
+                                <th th:text="${shop.chuShop.cccd}"></th>
+                            </tr>
+                            <tr>
+                                <th>Mat truoc CCCD</th>
+                                <th ><img style="max-height: 400px; max-width: 400px" th:src="@{'/getImg/'+${shop.chuShop.matTruocCCCD}}" alt="..."></th>
+                            </tr>
+                            <tr>
+                                <th>Mat sau CCCD</th>
+                                <th ><img style="max-height: 400px; max-width: 400px" th:src="@{'/getImg/'+${shop.chuShop.matSauCCCD}}" alt="..."></th>
+                            </tr>
+                            <tr>
+                                <th>Mo ta shop</th>
+                                <th th:text="${shop.moTa}"></th>
+                            </tr>
+                            <tr>
+                                <th>Hot line</th>
+                                <th th:text="${shop.hotLine}"></th>
+                            </tr>
+                            <tr>
+                                <th ><a th:href="@{/duyet/__${shop.idShop}__}">Duyet</a></th>
+                                <th  ><a th:href="@{/duyet/__${shop.idShop}__}">Huy</a></th>
+                            </tr>
+                        </table>
+
+</body>
+</html>

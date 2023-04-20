@@ -50,6 +50,7 @@
             <li><i class="fa fa-id-badge"></i><a href="/list_nv">Danh sách nhan vien</a></li>
             <li><i class="fa fa-id-badge"></i><a href="/list_dv">Danh sách dich vu</a></li>
             <li><i class="fa fa-id-badge"></i><a href="/list_dkdv">Danh sách dang ki dich vu</a></li>
+            <li><i class="fa fa-id-badge"></i><a href="/list_sp">Danh sach san pham</a></li>
           </ul>
         </li>
         <li class="menu-item-has-children dropdown">
@@ -234,8 +235,7 @@
                   <th th:text="${kh.sdt}"></th>
 
                   <th >
-                    <a class="btn btn-dark" th:href="@{/delete/__${kh.idKH}__}">Xoa tai khoan</a>
-                    <a class="btn btn-dark" th:href="@{/delete/__${kh.idKH}__}">Xoa tai khoan</a>
+                    <a class="btn btn-dark" th:href="@{/check/__${kh.idKH}__}">Kiem tra</a>
                   </th>
 
                 </tr>

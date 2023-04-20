@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div>
+  <head>
+    <meta charset="UTF-8">
+    <title>Carts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+      *{
+        box-sizing: inherit;
+      }
+      ul {
+        padding: 0;
+        list-style: none;
+      }
+      .cart{
+        width: 500px;
+      }
+      .menu-bar {
+        width: 100%;
+        display: flex;
+        padding: 0;
+      }
+      .menu-item {
+        flex: 1;
+        display: flex;
+      }
+      .menu-item-link {
+        text-decoration: none;
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        color: #000000;
+      }
+      .menu-item.active {
+        background-color: rosybrown;
+      }
+      .menu-item.active a {
+        color: #ffffff;
+      }
+      .cart-item {
+        display: flex;
+        border: 2px solid #cccccc;
+        background-color: #eaeaea;
+        width: 800px;
+        height: 200px;
+        margin: 10px;
+      }
+      .image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      input {
+        width: 64px;
+        text-align: center;
+      }
+      button {
+        font-size: 16px;
+      }
+      .cart-action {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cart-action i {
+        font-size: 34px;
+        color: #da5454;
+      }
+    </style>
+  </head>
+</div>
+<body>
+<div class="cart">
+  <div>
+    <a th:href="@{/}"><button>Mua thêm</button></a>
+    <ul class="menu-bar">
+      <li class="menu-item"><a th:href="@{/cart}" class="menu-item-link">01. Giỏ hàng</a></li>
+      <li class="menu-item"><a th:href="@{/cart/history}" class="menu-item-link">03. Đơn đã mua</a></li>
+    </ul>
+    <th:block th:each="cart : ${carts}">
+      <li class="cart-item">
+        <div class="image">
+          <img th:src="${cart.getSanPham().linkImg}" alt="">
+        </div>
+
+        <div class="cart-info">
+          <h3 th:text="${cart.getSanPham().tenSanPham}"></h3>
+          <table>
+            <tr>
+              <td><span>Mã SP:</span></td>
+              <td th:text="${cart.getSanPham().idSanPham}"></td>
+            </tr>
+            <tr>
+              <td><span>Giá:</span></td>
+              <td th:text="${cart.getSanPham().gia + 'đ'}"></td>
+            </tr>
+            <tr>
+              <td><span>Số lượng:</span></td>
+              <td th:text="${cart.getQuantity()}"></td>
+            </tr>
+            <tr>
+              <td><span>Thành tiền:</span></td>
+              <td th:text="${cart.getQuantity() * cart.getSanPham().gia + 'đ'}"></td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    </th:block>
+  </div>
+</div>
+<script>
+  document.getElementsByClassName("menu-item")[2].classList.add("active")
+</script>
+</body>
+</html>
