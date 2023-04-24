@@ -37,34 +37,80 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<style>
+
+  .hero {
+    background-image: url('https://sofatoanquoc.com/images/companies/1/untitled%20folder/sofa-banner-mua-thu-sofatoanquoc.jpg?1604309104295 ');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+  }
+  .button {
+    background-color: #0e77ff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+
+  .button:hover {
+    background-color: #00ff03;
+  }
+  /*body{*/
+  /*  background-image: url("https://thuthuatnhanh.com/wp-content/uploads/2022/06/Anh-Vu-Tru.jpg");*/
+  /*}*/
+</style>
 
 <body>
 <div th:insert="~{user/index::header}"></div>
 
 <main id="main">
 
-  <!-- ======= Breadcrumbs ======= -->
-  <section id="breadcrumbs" class="breadcrumbs">
-    <div class="container">
+<!--   ======= Breadcrumbs =======-->
+<!--  <section id="breadcrumbs" class="breadcrumbs">-->
+<!--    <div class="container">-->
 
-      <div class="d-flex justify-content-between align-items-center">
-        <h2>San Pham</h2>
-        <ol>
-          <li><a href="/">Home</a></li>
-          <li>San Pham</li>
-        </ol>
-      </div>
+<!--      <div class="d-flex justify-content-between align-items-center">-->
+<!--        <h2>San Pham</h2>-->
+<!--        <ol>-->
+<!--          <li><a href="/">Home</a></li>-->
+<!--          <li>San Pham</li>-->
+<!--        </ol>-->
+<!--      </div>-->
 
+<!--    </div>-->
+<!--  </section>&lt;!&ndash; End Breadcrumbs &ndash;&gt;-->
+
+  <section class="hero" style="margin-top: 69px;">
+    <div class="container" style="max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;">
+      <h1 style="color: white">Mua sắm tại Shop</h1>
+      <p style="color: white">Miễn phí vận chuyển cho đơn hàng trên 500k</p>
+      <a href="#" class="button">Xem sản phẩm</a>
     </div>
-  </section><!-- End Breadcrumbs -->
-
+  </section>
   <nav style="background:#2d4660">
     <div class="container">
       <ul>
-        <li><a href=""><img style="width: 150px;" src="https://media.istockphoto.com/id/1259018485/vi/vec-to/logo-c%E1%BB%ADa-h%C3%A0ng-th%C3%BA-c%C6%B0ng-h%C3%ACnh-minh-h%E1%BB%8Da-vector-thi%E1%BA%BFt-k%E1%BA%BF-ph%E1%BA%B3ng-thi%E1%BA%BFt-k%E1%BA%BF-ch%C3%B3-v%C3%A0-m%C3%A8o-cho-c%E1%BB%ADa-h%C3%A0ng.jpg?s=612x612&w=0&k=20&c=eXr10sod-4CdqURgTBkHAiS7GuBIKxbbCS4V9WKuuak=" alt=""></a></li>
+        <li><a href=""><img style="width: 150px;" src="user/assets/img/logo.png" alt=""></a></li>
         <li id="adress-form"><a href="#">Đà Nẵng <i class="fas fa-sort-down "></i></a></li>
-        <form  action="/searchDichVu">
-          <input  name="inputSearchDv" type="text" placeholder="Tim kiem san pham">
+        <form  action="/searchSanPham">
+          <input  name="inputSearchSp" type="text" placeholder="Tim kiem san pham">
           <button type="submit"><i class="bi bi-search"></i></button>
         </form>
         <li>
@@ -75,7 +121,7 @@
             Giỏ hàng <span th:text="${list.size()}"></span>
           </button>
         </li>
-<!--        <li><a href="">Lịch sử  <br> đăng kí dịch vụ </a></li>-->
+        <!--        <li><a href="">Lịch sử  <br> đăng kí dịch vụ </a></li>-->
         <li><a href=""><span class="btn-content"><span class="btn-top"></span></span> Nhận ngay ưu đãi!</a></li>
         <li><a href="">Liên hệ </a></li>
         <li><a href="">Hỏi đáp </a></li>
@@ -105,6 +151,7 @@
       </ul>
     </div>
   </nav>
+
 
   <!---------------Silder-------------->
   <section class="slider">
@@ -146,7 +193,6 @@
       </div>
     </div>
   </section>
-// san pham
   <section class="product-galary-one">
     <div class="container">
       <div class="product-galary-one-content">
@@ -162,7 +208,7 @@
         <div style="margin:5px" class="product-galary-one-content-product">
           <div class="product-galary-one-content-product-item" th:each="sp :${sanPhams}">
             <!--              <img style="max-width: 100%"  th:src="@{'/getImg/'+${sp.linkImg}}" alt="...">-->
-            <img style="max-width: 100%"  th:src="@{${sp.linkImg}}" alt="...">
+            <img style="max-width: 100%"  th:src="@{'/getImg/'+${sp.linkImg}}" alt="...">
             <div class="product-galary-one-content-product-item-text">
               <li><img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/2020/10/content/icon6-50x50.png" alt=""><p> GIẢM 1TR SS WALLET</p></li>
               <li> <a th:text="${sp.tenSanPham}" href="#"></a></li>
@@ -190,11 +236,11 @@
     </div>
   </section>
   <div style="text-align: center">
-    <div style=" display: inline-block ;width: 30px;height: 30px; border: 1px solid #008cff; color: #008cff; " th:if="${dichVus.totalPages > 0}"
+    <div style=" display: inline-block ;width: 30px;height: 30px; border: 1px solid #008cff; color: #008cff; " th:if="${sanPhams.totalPages > 0}"
          th:each="pageNumber : ${pageNumbers}">
-      <a  th:href="@{/services(size=${dichVus.size}, page=${pageNumber})}"
+      <a  th:href="@{/portfolio(size=${sanPhams.size}, page=${pageNumber})}"
           th:text="${pageNumber}"
-          th:class="${pageNumber==dichVus.number + 1} ? active"></a>
+          th:class="${pageNumber==sanPhams.number + 1} ? active"></a>
     </div>
   </div>
 

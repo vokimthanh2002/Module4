@@ -85,7 +85,7 @@
     <a th:href="@{/}"><button>Mua thêm</button></a>
     <ul class="menu-bar">
       <li class="menu-item"><a th:href="@{/cart}" class="menu-item-link">01. Giỏ hàng</a></li>
-      <li class="menu-item"><a th:href="@{/cart/history}" class="menu-item-link">03. Đơn đã mua</a></li>
+      <li class="menu-item"><a th:href="@{/cart/history}" class="menu-item-link">02. Đơn đã mua</a></li>
     </ul>
     <!--        <form th:action="@{/cart/buy}" method="post">-->
     <ul class="cart-list">
@@ -95,7 +95,7 @@
       <th:block th:each="cart : ${carts}">
         <li class="cart-item">
           <div class="image">
-            <img th:src="${cart.getSanPham().linkImg}" alt="">
+            <img th:src="@{'getImg/'+${cart.getSanPham().linkImg}}" alt="">
           </div>
 
           <div class="cart-info">

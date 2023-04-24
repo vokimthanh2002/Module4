@@ -61,7 +61,7 @@
                         <div class="swiper-wrapper align-items-center">
                             <div class="swiper-slide" >
 <!--                                <img   th:src="@{'/getImg/'+${sanPham.linkImg}}" alt="...">-->
-                                <img   th:src="${sanPham.linkImg}" alt="...">
+                                <img   th:src="@{'/getImg/'+${sanPham.linkImg}}" alt="...">
                             </div>
 
                         </div>
@@ -128,7 +128,7 @@
                         <div class="product-galary-one-content-product" >
                             <div class="product-galary-one-content-product-item" th:each="sp :${sanPhams}">
 <!--                                <img style="max-width: 100%"  th:src="@{'/getImg/'+${sanPham.linkImg}}" alt="...">-->
-                                <img style="max-width: 100%"  th:src="${sp.linkImg}" alt="...">
+                                <img   th:src="@{'/getImg/'+${sp.linkImg}}" alt="...">
                                 <div class="product-galary-one-content-product-item-text">
                                     <li><img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/2020/10/content/icon6-50x50.png" alt=""><p> GIẢM 1TR SS WALLET</p></li>
                                     <li> <a th:text="${sp.tenSanPham}" href="#"></a></li>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trang quản lý chủ shop</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZEuLXRwI2Q2kkrMVoXks7"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-H3O5TP7xxIEXJlbydNXhlLgD+uI7V8FT9/5Z7AdMts0KL+H7uzc2Lg5y5NwvyWWnG6jW8FojwgJCg12/+lHZw=="
+          crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script></script>
+</head>
+
+<body>
+<div th:insert="~{chushop/home::nav_chushop}"></div>
+<div style="width: 600px; margin: auto;">
+    <canvas id="myPieChart"></canvas>
+</div>
+
+
+
+
+
+<!-- Right Panel -->
+
+<script>
+    const data = {
+        labels: ['Mục 1', 'Mục 2', 'Mục 3', 'Mục 4', 'Mục 5'],
+        datasets: [
+            {
+                data: [10, 20, 30, 15, 25],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(231, 233, 237, 0.7)',
+                    'rgba(54, 162, 235, 0.7)'
+                ],
+                hoverOffset: 4
+            }
+        ]
+    };
+
+    const config = {
+        type: 'pie',
+        data: data
+    };
+
+    const myPieChart = new Chart(
+        document.getElementById('myPieChart'),
+        config
+    );
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper-base.min.js"
+        integrity="sha384-XaCgsJryl+nNl1emhepNcRZPw/0hJi8x/3y3q3+k2Qcvgktfz6dK7NZ3qYiQsTua"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZEuLXRwI2Q2kkrMVoXks7"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+

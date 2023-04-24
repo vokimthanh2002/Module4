@@ -61,12 +61,12 @@ public  class LoginControler {
                    session.setAttribute("user_logiin",userCheck);
 
                    if( userCheck.getQuyen().getIdQuyen().equals("rule_cs")&&shop.getTrangThai().equals("Da duyet")){
-                       return "redirect:/list_nv";
+                       return "redirect:/chushop_home";
                    }else if(userCheck.getQuyen().getIdQuyen().equals("rule_user")||userCheck.getQuyen().getIdQuyen().equals("rule_kh")
                            ||userCheck.getQuyen().getIdQuyen().equals("rule_cs")){
                        return "redirect:/";
                    }else if(userCheck.getQuyen().getIdQuyen().equals("rule-admin")){
-                       return "redirect:/list_user";
+                       return "redirect:/home_admin";
                    }
 
                }

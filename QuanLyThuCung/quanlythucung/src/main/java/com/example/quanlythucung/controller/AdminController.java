@@ -1,6 +1,7 @@
 package com.example.quanlythucung.controller;
 
 import com.example.quanlythucung.bean.ChuShop;
+import com.example.quanlythucung.bean.Quyen;
 import com.example.quanlythucung.bean.Shop;
 import com.example.quanlythucung.bean.TaiKhoan;
 import com.example.quanlythucung.service.ChuShopService;
@@ -43,7 +44,7 @@ public class AdminController {
         if (user == null || "".equals(user)||!user.getQuyen().getIdQuyen().equals("rule-admin")) {
             return "redirect:/error_404";
         }
-        List<ChuShop> chuShops = chuShopService.findAllChuShop();
+        List<ChuShop> chuShops = chuShopService.findByTrangThai("Da duyet");
         model.addAttribute("chuShops",chuShops);
         return "admin/list_cs";
     }
@@ -108,6 +109,33 @@ public class AdminController {
     public String duyetShop(@PathVariable("id") String id,Model model){
         model.addAttribute("shop",shopService.findById(id));
         return "admin/profile_cs";
+    }
+    @GetMapping(value = "/duyet/{idShop}")
+    public String xacNhanDuyetShop(@PathVariable("idShop") String idShop){
+        Shop shop = shopService.findById(idShop);
+        shop.setTrangThai("Da duyet");
+        shopService.updateShop(shop);
+        return "redirect:/list_shop_cho_duyet";
+    }
+    @GetMapping(value = "/huy/{idShop}")
+    public String huyDuyetShop(@PathVariable("idShop") String idShop){
+        Shop shop =shopService.findById(idShop);
+        String idChuShop = shop.getChuShop().getIdChuShop();
+        TaiKhoan user = userService.finById(chuShopService.finById(idChuShop).getTaiKhoan().getTenDangNhap());
+        user.setQuyen(new Quyen("rule_user","User"));
+        shopService.deleteShop(shop);
+        chuShopService.deleteChuShop(chuShopService.finById(idChuShop));
+        userService.updateUser(user);
+
+        return "redirect:/list_shop_cho_duyet";
+    }
+    @GetMapping(value = "/home_admin")
+    public String homeAdmin( HttpSession session){
+        TaiKhoan user = (TaiKhoan) session.getAttribute("user_logiin");
+        if (user == null || "".equals(user)||!user.getQuyen().getIdQuyen().equals("rule-admin")) {
+            return "redirect:/error_404";
+        }
+        return "admin/home_admin";
     }
 
 }

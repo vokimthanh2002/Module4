@@ -12,7 +12,9 @@ public interface ChuShopService {
     ChuShop finById(String maChuShop);
     void deleteChuShop(ChuShop chuShop);
     List<ChuShop> findAllChuShop();
+    List<ChuShop> findByTrangThai(String trangThai);
     ChuShop finBYChuShop_IdDichVu(@Param("idDichVu") String idDichVu);
     ChuShop finBYChuShop_IdSanPham(@Param("idSanPham") String idSanPham);
+    ChuShop findByIdShop(@Param("idShop") String idShop);
 
 }

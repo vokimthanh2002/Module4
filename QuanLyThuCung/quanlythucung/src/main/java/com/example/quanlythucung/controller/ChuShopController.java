@@ -37,6 +37,8 @@ public class ChuShopController {
     @Autowired
     ShopService shopService;
     @Autowired
+    DanhMucService danhMucService;
+    @Autowired
     DichVuService dichVuService;
     @Autowired
     DangKiDichVuService dangKiDichVuService;
@@ -50,6 +52,15 @@ public class ChuShopController {
     SanPhamService sanPhamService;
     @Autowired
     QuyenService quyenService;
+    @GetMapping(value = "/chushop_home")
+    public String home(HttpSession session,Model model){
+        TaiKhoan user = (TaiKhoan) session.getAttribute("user_logiin");
+        if (user == null || "".equals(user)||!user.getQuyen().getIdQuyen().equals("rule_cs")) {
+            return "redirect:/error_404";
+        }
+        model.addAttribute("user_logiin",user);
+        return "chushop/home";
+    }
     @GetMapping(value = "/list_nv")
     public String showListNv( Model model, HttpServletResponse response, HttpSession session){
         TaiKhoan user = (TaiKhoan) session.getAttribute("user_logiin");
@@ -163,6 +174,17 @@ public class ChuShopController {
         return "chushop/create_dv";
     }
 
+    @GetMapping(value = "/create_sp")
+    public String showFormCreateSp(Model model,HttpServletResponse response, HttpSession session){
+        TaiKhoan user = (TaiKhoan) session.getAttribute("user_logiin");
+        if (user == null || "".equals(user)||!user.getQuyen().getIdQuyen().equals("rule_cs")) {
+            return "redirect:/error_404";
+        }
+        model.addAttribute("sanPham",new SanPham());
+        model.addAttribute("danhMucs",danhMucService.findAll());
+        return "chushop/create_sp";
+    }
+
     @PostMapping(value = "/create_dv")
     public String createDv(@ModelAttribute("dichVu") DichVu dichVu,
                            HttpServletResponse response,
@@ -186,10 +208,57 @@ public class ChuShopController {
         dichVuService.addDichVu(dichVu);
         return "redirect:/list_dv";
     }
+
+    @PostMapping(value = "/create_sp")
+    public String createSp(@ModelAttribute("sanPham") SanPham sanPham,
+                           HttpServletResponse response,
+                           HttpSession session,
+                           @RequestParam("img") MultipartFile img){
+        if (img.isEmpty()){
+            sanPham.setLinkImg("");
+        }
+        Path path = Paths.get("upload/");
+        try{
+            InputStream inputStream = img.getInputStream();
+            Files.copy(inputStream, path.resolve(img.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
+            sanPham.setLinkImg(img.getOriginalFilename().toLowerCase());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        TaiKhoan user_cs = (TaiKhoan) session.getAttribute("user_logiin");
+        Shop shop=  shopService.findByChuShop_TaiKhoan_TenDangNhap(user_cs.getTenDangNhap());
+        sanPham.setIdSanPham("SP-"+Math.random()*10000);
+        sanPham.setShop(shop);
+        sanPhamService.addSanPham(sanPham);
+        return "redirect:/list_sp";
+    }
+
     @GetMapping(value = "update_dv/{idDv}")
     public String showFormUpdateDv(@PathVariable("idDv") String idDv,Model model){
        model.addAttribute("dichVu",dichVuService.findByDichVuById(idDv));
         return  "chushop/update_dv";
+    }
+    @PostMapping(value = "/update_dv")
+    public String updateDichVu(@ModelAttribute("dichVu") DichVu dichVu,
+                               HttpServletResponse response,
+                               HttpSession session,
+                               @RequestParam("img") MultipartFile img){
+        if (img.isEmpty()){
+            dichVu.setLinkImg("");
+        }
+        Path path = Paths.get("upload/");
+        try{
+            InputStream inputStream = img.getInputStream();
+            Files.copy(inputStream, path.resolve(img.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
+            dichVu.setLinkImg(img.getOriginalFilename().toLowerCase());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        TaiKhoan user_cs = (TaiKhoan) session.getAttribute("user_logiin");
+        Shop shop=  shopService.findByChuShop_TaiKhoan_TenDangNhap(user_cs.getTenDangNhap());
+        dichVu.setShop(shop);
+        dichVuService.updateDichVu(dichVu);
+        return "redirect:/list_dv";
     }
 
     // pdf
@@ -258,12 +327,31 @@ public class ChuShopController {
         shop.setHotLine(dangKiChuShopForm.getHotLine());
         shop.setMoTa(dangKiChuShopForm.getMoTa());
         shop.setNgayDK(String.valueOf(LocalDate.now()));
-        shop.setNgayDK(dangKiChuShopForm.getNgayDK());
         shop.setTenShop(dangKiChuShopForm.getTenShop());
         shop.setTrangThai("Chua duyet");
         shop.setChuShop(chuShop);
         shopService.addShop(shop);
         return "user/index";
+    }
+    @GetMapping(value = "/thong_ke_doanh_thu")
+    public String thongKeDoanhThu(Model model,HttpSession session){
+        TaiKhoan user = (TaiKhoan) session.getAttribute("user_logiin");
+        if (user == null || "".equals(user)||!user.getQuyen().getIdQuyen().equals("rule_cs")) {
+            return "redirect:/error_404";
+        }
+        model.addAttribute("user_logiin",user);
+        model.addAttribute("listDichVu",dichVuService.findByShop_ChuShop_TaiKhoan_TenDangNhap(user.getTenDangNhap()));
+        return "chushop/thong_ke_doanh_thu";
+    }
+    @GetMapping(value = "/thong_ke_su_dung_dich_vu")
+    public String thongKeDichVu(Model model,HttpSession session){
+        TaiKhoan user = (TaiKhoan) session.getAttribute("user_logiin");
+        if (user == null || "".equals(user)||!user.getQuyen().getIdQuyen().equals("rule_cs")) {
+            return "redirect:/error_404";
+        }
+        model.addAttribute("user_logiin",user);
+        model.addAttribute("listDichVu",dichVuService.findByShop_ChuShop_TaiKhoan_TenDangNhap(user.getTenDangNhap()));
+        return "chushop/thong_ke_ty_le_su_dung_dich_vu";
     }
 
 }

@@ -6,10 +6,11 @@ import java.util.Objects;
 @Entity
 public class SanPham {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private String idSanPham;
     private String tenSanPham;
     private double gia;
+    @Column(columnDefinition = "varchar(5000)")
     private String moTa;
     private String linkImg;
     @ManyToOne

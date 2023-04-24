@@ -40,6 +40,11 @@ public class ChuShopServiceImpl implements ChuShopService {
     }
 
     @Override
+    public List<ChuShop> findByTrangThai(String trangThai) {
+        return repository.findByTrangThai(trangThai);
+    }
+
+    @Override
     public ChuShop finBYChuShop_IdDichVu(String idDichVu) {
         return repository.finBYChuShop_IdDichVu(idDichVu);
     }
@@ -47,6 +52,11 @@ public class ChuShopServiceImpl implements ChuShopService {
     @Override
     public ChuShop finBYChuShop_IdSanPham(String idSanPham) {
         return repository.finBYChuShop_IdSanPham(idSanPham);
+    }
+
+    @Override
+    public ChuShop findByIdShop(String idShop) {
+        return repository.findByIdShop(idShop);
     }
 
 

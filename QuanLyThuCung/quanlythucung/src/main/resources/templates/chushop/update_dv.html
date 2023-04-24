@@ -14,6 +14,7 @@
 
 <h2> Chinh sua dich vu </h2>
 <form action="/update_dv" method="post" th:object="${dichVu}" enctype="multipart/form-data">
+    <input th:field="*{idDichVu}" type="hidden" >
     <div class="form-group">
         <label >Ten dich vu</label>
         <input th:field="*{tenDichVu}" type="text" class="form-control"  placeholder="Ten dich vu">

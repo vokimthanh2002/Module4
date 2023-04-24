@@ -37,6 +37,69 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3 {
+    margin-top: 0;
+  }
+
+  .team {
+    background-color: #f4f4f4;
+    padding: 40px 0;
+  }
+
+  .team h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .team-member {
+    flex-basis: calc(25% - 20px);
+    margin: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .team-member img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  .imgSize{
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .team-member h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .team-member p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  /*body{*/
+  /*  background-image: url("https://thuthuatnhanh.com/wp-content/uploads/2022/06/Anh-Vu-Tru.jpg");*/
+  /*}*/
+  </style>
 <body>
 
   <!-- ======= Header ======= -->
@@ -68,10 +131,10 @@
               </li>
             </ul>
           </li>
-          <li><a href="/services">Dich vụ</a></li>
-          <li><a href="/portfolio">Sản phẩm</a></li>
-          <li><a href="/pricing">Trở thành chủ shop</a></li>
-          <li><a href="/blog">Blog</a></li>
+          <li><a href="/services" >Dich vụ</a></li>
+          <li><a href="/portfolio" >Sản phẩm</a></li>
+          <li><a href="/pricing" >Trở thành chủ shop</a></li>
+          <li><a href="/blog" >Blog</a></li>
 
           <li><a href="/contact">Liên Lạc</a></li>
             <li th:if="${user_logiin} ==null"><a href="/login" class="getstarted">Đăng nhập</a></li>
@@ -153,23 +216,25 @@
 
         <div class="row content">
           <div class="col-lg-6">
-            <h2>Eum ipsam laborum deleniti velitena</h2>
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
+            <h2>Tại sao nên sử dụng các loại dịch vụ tại shop chăm sóc thú cưng</h2>
+            <h3>Cung cấp tất cả các dịch vụ liên quan đến thú cưng, tạo ra những trãi nghiệm tối đối với người dùng</h3>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
+              Cắt lông cho chó mèo là một vấn đề rất quan trọng.
+              Việc đó đảm bảo cho sự phát triển về sức khỏe,
+              thể chất và tinh thần cho thú cưng của bạn. Những thú cưng không được chăm sóc,
+              cắt tỉa và làm đẹp thường có nguy cơ gặp phải bọ chét, ve rận, ký sinh trùng và các vấn đề về viêm da khác.
+              Việc sử dụng dịch vụ cắt tỉa lông chó mèo tại Pet Shop định kỳ và thường xuyên sẽ đem lại nhiều lợi ích thiết thực cho vật nuôi
+              của bạn. Hãy lập kế hoạch đưa thú cưng của bạn đến với chúng tôi mỗi tuần.
             </p>
             <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequa</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</li>
+              <li><i class="ri-check-double-line"></i> Chúng tôi làm việc hết mình với chữ tâm, trách nhiệm và lòng nhiệt huyết. Thú cưng khỏe mạnh là niềm hạnh phúc của chúng tôi.</li>
+              <li><i class="ri-check-double-line"></i> Chúng tôi cam kết đưa ra mức giá tốt nhất so với thị trường để tất cả thú cưng đều có cơ hội được trải nghiệm dịch vụ của chúng tôi.</li>
+              <li><i class="ri-check-double-line"></i> Chúng tôi không ngừng nâng cao phát triển trình độ kỹ năng của nhân sự để phục vụ thú cưng những điều tốt đẹp nhất.</li>
             </ul>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              Vui lòng kiểm tra kỹ thú cưng khi đến đón thú cưng sau khi làm dịch vụ. Quy trình đảm bảo nhân viên của Pet Shop đã thực hiện đúng yêu cầu và bạn hài lòng với chất lượng dịch vụ..
             </p>
           </div>
         </div>
@@ -180,7 +245,7 @@
     <nav style="background:#2d4660">
       <div class="container">
         <ul>
-          <li><a href=""><img style="width: 150px;" src="https://media.istockphoto.com/id/1259018485/vi/vec-to/logo-c%E1%BB%ADa-h%C3%A0ng-th%C3%BA-c%C6%B0ng-h%C3%ACnh-minh-h%E1%BB%8Da-vector-thi%E1%BA%BFt-k%E1%BA%BF-ph%E1%BA%B3ng-thi%E1%BA%BFt-k%E1%BA%BF-ch%C3%B3-v%C3%A0-m%C3%A8o-cho-c%E1%BB%ADa-h%C3%A0ng.jpg?s=612x612&w=0&k=20&c=eXr10sod-4CdqURgTBkHAiS7GuBIKxbbCS4V9WKuuak=" alt=""></a></li>
+          <li><a href=""><img style="width: 150px;" src="user/assets/img/logo.png" alt=""></a></li>
           <li id="adress-form"><a href="#">Đà Nẵng <i class="fas fa-sort-down "></i></a></li>
           <form  action="/searchDichVu">
             <input  name="inputSearchDv" type="text" placeholder="Tim kiem dich vu">
@@ -301,14 +366,16 @@
         </div>
       </div>
     </section>
-<!--San Pham-->
 
+
+<!--San Pham-->
+<div  style="text-align: center"><a href="/services" class="btn btn-outline-info">Xem thêm dịch vụ</a></div>
 
     <section class="product-galary-one">
       <div class="container">
         <div class="product-galary-one-content">
           <div class="product-galary-one-content-title">
-            <h2>Các sản phẩm bán chạy nhất</h2>
+            <h2>Các sản phẩm dành cho thú cưng</h2>
             <ul>
               <li><a href="">Thức ăn cho chó con cỡ nhỏ Mini Puppy</a></li>
               <li><a href="">Thức ăn cho chó Poodle con ROYAL CANIN Poodle Puppy</a></li>
@@ -319,7 +386,7 @@
           <div style="margin:5px" class="product-galary-one-content-product">
             <div class="product-galary-one-content-product-item" th:each="sp :${sanPhams}">
 <!--              <img style="max-width: 100%"  th:src="@{'/getImg/'+${sp.linkImg}}" alt="...">-->
-              <img style="max-width: 100%"  th:src="@{${sp.linkImg}}" alt="...">
+              <img style="max-width: 100%"  th:src="@{'/getImg/'+${sp.linkImg}}" alt="...">
               <div class="product-galary-one-content-product-item-text">
                 <li><img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/2020/10/content/icon6-50x50.png" alt=""><p> GIẢM 1TR SS WALLET</p></li>
                 <li> <a th:text="${sp.tenSanPham}" href="#"></a></li>
@@ -346,154 +413,64 @@
         </div>
       </div>
     </section>
+    <div  style="text-align: center; margin-bottom: 40px"><a href="/portfolio" class="btn btn-outline-info">Xem thêm sản phẩm</a></div>
 
     <!-- ======= Portfolio Section ======= -->
-      <section id="portfolio" class="portfolio">
-        <div class="container">
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">Tất cả</li>
-              <li data-filter=".filter-app">Chó</li>
-              <li data-filter=".filter-card">Mèo</li>
-              <li data-filter=".filter-web">Chim</li>
-            </ul>
+    <section class="team">
+      <div class="container">
+        <h2>Đội ngũ của chúng tôi</h2>
+        <div class="team-members">
+          <div class="team-member">
+            <img style="height: 150px" class="imgSize" src="https://i.ndh.vn/2022/06/04/ty-phu-1-1654334928.jpeg" alt="Team Member 1">
+            <h3>Võ Kim Thành</h3>
+            <p>Nhà phát triển</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a target="_blank" href="https://www.facebook.com/nguoidungfb.10001.nkfft.cndv" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="team-member">
+            <img class="imgSize" src="https://pinetworkblog.com/wp-content/uploads/2021/02/chengdiao.gif" alt="Team Member 2">
+            <h3>Phan Thị Hoài Anh</h3>
+            <p>Nhà thiết kế</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a target="_blank" href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="team-member">
+            <img style="height: 150px" class="imgSize" src="https://static-images.vnncdn.net/files/publish/ty-phu-elon-musk-vua-chi-44-ty-usd-de-mua-lai-twitter-9ff465ee3a124118b8fc9b8e8c9bcb4a.jpg" alt="Team Member 3">
+            <h3>Nguyễn Việt Long</h3>
+            <p>Nhà phát triển</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="team-member">
+            <img style="height: 150px" class="imgSize" src="https://i-kinhdoanh.vnecdn.net/2018/02/26/AP-1519608017.jpg" alt="Team Member 4">
+            <h3>Nguyễn Hà Huynh</h3>
+            <p>Quản trị dự án</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
           </div>
         </div>
-
-        <div class="row portfolio-container">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="/portfolio-details" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="/portfolio-details" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                  <a href="/portfolio-details" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                  <a href="/portfolio-details" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                  <a href="/portfolio-details" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                  <a href="/portfolio-details" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                  <a href="/portfolio-details" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                  <a href="/portfolio-details" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="user/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="user/assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="/portfolio-details" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
       </div>
-    </section><!-- End Portfolio Section -->
+    </section>
 
   </main><!-- End #main -->
 

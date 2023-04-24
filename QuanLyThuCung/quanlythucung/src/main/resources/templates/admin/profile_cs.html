@@ -1,65 +1,131 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Thông tin Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .info-group {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+
+        .info-group img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            margin-right: 20px;
+        }
+
+        .info-group label {
+            font-weight: bold;
+            margin-right: 10px;
+            min-width: 120px;
+        }
+
+        .info-group span {
+            flex-grow: 1;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        a {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #3e8e41;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <h1>Thông tin Shop</h1>
+    <div class="info-group">
+        <label>Họ và tên chủ shop:</label>
+        <span th:text="${shop.chuShop.tenChuShop}"></span>
+    </div>
+    <div class="info-group">
+        <label>Tên shop:</label>
+        <span th:text="${shop.tenShop}"></span>
+    </div>
+    <div class="info-group">
+        <label>Email:</label>
+        <span  th:text="${shop.email}"></span>
+    </div>
+    <div class="info-group">
+        <label>Giới tính:</label>
+        <span th:text="${shop.chuShop.gioiTinh}"></span>
+    </div>
+    <div class="info-group">
+        <label>Địa chỉ:</label>
+        <span  th:text="${shop.diaChi}"></span>
+    </div>
+    <div class="info-group">
+        <label>Ngày sinh:</label>
+        <span th:text="${shop.chuShop.ngaySinh}"></span>
+    </div>
+    <div class="info-group">
+        <label>Số điện thoại:</label>
+        <span th:text="${shop.chuShop.sdt}"></span>
+    </div>
+    <div class="info-group">
+        <label>Số CCCD:</label>
+        <span th:text="${shop.chuShop.cccd}"></span>
+    </div>
+    <div class="info-group">
+        <label>Ảnh chứng minh mặt trước:</label>
 
-                        <table border="1px">
-                            <tr>
-                                <th>Ho va ten chu shop</th>
-                                <th th:text="${shop.chuShop.tenChuShop}"></th>
-                            </tr>
-                            <tr>
-                                <th>Ten shop</th>
-                                <th th:text="${shop.tenShop}"></th>
-                            </tr>
-                            <tr>
-                                <th>Email</th>
-                                <th th:text="${shop.email}"></th>
-                            </tr>
-                            <tr>
-                                <th>Gioi tinh</th>
-                                <th th:text="${shop.chuShop.gioiTinh}"></th>
-                            </tr>
-                            <tr>
-                                <th>Dia chi</th>
-                                <th th:text="${shop.diaChi}"></th>
-                            </tr>
-                            <tr>
-                                <th>Ngay dinh</th>
-                                <th th:text="${shop.chuShop.ngaySinh}"></th>
-                            </tr>
-                            <tr>
-                                <th>So dien thoai</th>
-                                <th th:text="${shop.chuShop.sdt}"></th>
-                            </tr>
-                            <tr>
-                                <th>So CCCD</th>
-                                <th th:text="${shop.chuShop.cccd}"></th>
-                            </tr>
-                            <tr>
-                                <th>Mat truoc CCCD</th>
-                                <th ><img style="max-height: 400px; max-width: 400px" th:src="@{'/getImg/'+${shop.chuShop.matTruocCCCD}}" alt="..."></th>
-                            </tr>
-                            <tr>
-                                <th>Mat sau CCCD</th>
-                                <th ><img style="max-height: 400px; max-width: 400px" th:src="@{'/getImg/'+${shop.chuShop.matSauCCCD}}" alt="..."></th>
-                            </tr>
-                            <tr>
-                                <th>Mo ta shop</th>
-                                <th th:text="${shop.moTa}"></th>
-                            </tr>
-                            <tr>
-                                <th>Hot line</th>
-                                <th th:text="${shop.hotLine}"></th>
-                            </tr>
-                            <tr>
-                                <th ><a th:href="@{/duyet/__${shop.idShop}__}">Duyet</a></th>
-                                <th  ><a th:href="@{/duyet/__${shop.idShop}__}">Huy</a></th>
-                            </tr>
-                        </table>
-
+        <span><img style="max-height: 400px; max-width: 400px" th:src="@{'/getImg/'+${shop.chuShop.matTruocCCCD}}"/></span>
+    </div>
+    <div class="info-group">
+        <label>Ảnh chứng minh mặt sau:</label>
+        <span><img style="max-height: 400px; max-width: 400px" th:src="@{'/getImg/'+${shop.chuShop.matSauCCCD}}"/></span>
+    </div>
+    <div class="info-group">
+        <label>Mô tả shop:</label>
+        <span th:text="${shop.moTa}"></span>
+    </div>
+    <div class="info-group">
+        <label>Hotline:</label>
+        <span th:text="${shop.hotLine}"></span>
+    </div>
+    <div class="button-container">
+        <a th:href="@{/duyet/__${shop.idShop}__}" >Duyệt</a>
+        <a  th:href="@{/huy/__${shop.idShop}__}" >Hủy</a>
+    </div>
+</div>
 </body>
 </html>

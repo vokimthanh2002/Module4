@@ -59,4 +59,9 @@ public class SanPhamServiceImpl implements SanPhamService {
     public List<SanPham> findByShop_ChuShop_TaiKhoan_TenDangNhap(String tenDangNhap) {
         return repository.findByShop_ChuShop_TaiKhoan_TenDangNhap(tenDangNhap);
     }
+
+    @Override
+    public List<SanPham> findAllContains(String tenSanPham, String moTa) {
+        return repository.findByTenSanPhamContainsOrMoTaContains(tenSanPham,moTa);
+    }
 }

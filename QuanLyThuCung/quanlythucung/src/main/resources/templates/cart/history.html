@@ -90,7 +90,7 @@
     <th:block th:each="cart : ${carts}">
       <li class="cart-item">
         <div class="image">
-          <img th:src="${cart.getSanPham().linkImg}" alt="">
+          <img th:src="@{'getImg/'+${cart.getSanPham().linkImg}}" alt="">
         </div>
 
         <div class="cart-info">

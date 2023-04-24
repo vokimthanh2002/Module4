@@ -1,152 +1,323 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en"  xmlns:th="http://www.thymeleaf.org">
-<!--<![endif]-->
-
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sufee Admin - HTML5 Admin Template</title>
-    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
-    <link rel="stylesheet" href="/vendors/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/vendors/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="/vendors/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="/vendors/selectFX/css/cs-skin-elastic.css">
-
-    <link rel="stylesheet" href="/assets/css/style.css">
-
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
 </head>
+<style>
+    .custom-file-label::after {
+        content: "Chọn file";
+    }
 
+    .custom-file-input:lang(en)~.custom-file-label::after {
+        content: "Choose file";
+    }
+
+    .custom-file-input {
+        padding: 0;
+    }
+
+    .custom-file-input:lang(en)~.custom-file-label::before {
+        content: "Browse";
+    }
+
+    .custom-file-input:focus~.custom-file-label {
+        border-color: #80bdff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .custom-file-input:disabled~.custom-file-label {
+        background-color: #e9ecef;
+    }
+
+    .invalid-feedback {
+        display: none;
+        width: 100%;
+        margin-top: .25rem;
+        font-size: 80%;
+    }
+    .custom-file-label::after {
+        content: "Chọn file";
+    }
+
+    .custom-file-input:lang(en)~.custom-file-label::after {
+        content: "Choose file";
+    }
+
+    .custom-file-input {
+        padding: 0;
+    }
+
+    .custom-file-input:lang(en)~.custom-file-label::before {
+        content: "Browse";
+    }
+
+    .custom-file-input:focus~.custom-file-label {
+        border-color: #80bdff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .custom-file-input:disabled~.custom-file-label {
+        background-color: #e9ecef;
+    }
+
+    .invalid-feedback {
+        display: none;
+        width: 100%;
+        margin-top: .25rem;
+        font-size: 80%;
+        color: #dc3545;
+    }
+
+    .form-control.is-invalid,
+    .was-validated .form-control:invalid {
+        border-color: #dc3545;
+        padding-right: calc(1.5em + .75rem);
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='0 0 8 8'%3e%3cpath d='M6.207 0l1.146 1.146-6.353 6.354-1.147-1.146z'/%3e%3cpath d='M1.146 0L0 1.146 6.354 7.5l1.146-1.146z'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right calc(.375em + .1875rem) center;
+        background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+    }
+
+    .form-control.is-invalid:focus,
+    .was-validated .form-control:invalid:focus {
+        border-color: #dc3545;
+        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }
+
+    .custom-select.is-invalid,
+    .was-validated .custom-select:invalid {
+        border-color: #dc3545;
+    }
+
+    .custom-select.is-invalid:focus,
+    .was-validated .custom-select:invalid:focus {
+        border-color: #dc3545;
+        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }
+
+    .was-validated .form-check-input:invalid~.form-check-label,
+    .form-check-input.is-invalid~.form-check-label {
+        color: #dc3545;
+    }
+
+    .was-validated .form-check-input:invalid~.invalid-feedback,
+    .was-validated .form-check-input:invalid~.invalid-tooltip,
+    .form-check-input.is-invalid~.invalid-feedback,
+    .form-check-input.is-invalid~.invalid-tooltip {
+        display: block;
+    }
+
+    .form-inline {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+
+    .form-inline .form-check {
+        width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        .form-inline label {
+            display: flex;
+            margin-bottom: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-inline .form-group {
+            display: flex;
+            margin-bottom: 0;
+            align-items: center;
+        }
+
+        .form-inline .form-control {
+            display: inline-block;
+            width: auto;
+            vertical-align: middle;
+        }
+
+        .form-inline .form-control-plaintext {
+            display: inline-block;
+        }
+
+        .form-inline .input-group,
+        .form-inline .custom-select {
+            width: auto;
+        }
+
+        .form-inline .form-check {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            padding-left: 0;
+        }
+
+        .form-inline .form-check-input {
+            position: relative;
+            margin-top: 0;
+            margin-right: 0.25rem;
+            margin-left: 0;
+        }
+
+        .form-inline .custom-control {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-inline .custom-control-label {
+            margin-bottom: 0;
+        }
+    }
+    /* Custom styles */
+    .card-header {
+        background-color: #3f51b5;
+        color: white;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .btn-primary {
+        background-color: #3f51b5;
+        border-color: #3f51b5;
+    }
+
+    .btn-primary:hover {
+        background-color: #2c3e50;
+        border-color: #2c3e50;
+    }
+
+    @media (max-width: 767.98px) {
+        .card-header {
+            font-size: 18px;
+        }
+
+        .btn-primary {
+            font-size: 14px;
+        }
+    }
+
+</style>
 <body>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Đăng ký trở thành chủ shop</div>
+                <div class="card-body">
+                    <form method="POST" action="/dkcs" enctype="multipart/form-data" th:object="${dangKiChuShopForm}">
 
-<div class="content mt-3">
-    <div class="animated fadeIn">
-
-
-        <div class="row">
-            <!--/.col-->
-
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-header">
-                        <strong>Đăng kí để trở thành chủ shop</strong>
-                    </div>
-                    <div class="card-body card-block">
-
-                        <form action="/dkcs" method="post" th:object="${dangKiChuShopForm}" enctype="multipart/form-data" >
-                            <!--                <div class="row form-group">-->
-                            <!--                  <div class="col col-md-3"><label class=" form-control-label">Static</label></div>-->
-                            <!--                  <div class="col-12 col-md-9">-->
-                            <!--                    <p class="form-control-static">Username</p>-->
-                            <!--                  </div>-->
-                            <!--                </div>-->
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Họ và tên chủ shop: </label></div>
-                                <div class="col-12 col-md-9"><input th:field="*{tenChuShop}" type="text" id="text-input" name="text-input" placeholder="Nhập họ và tên" class="form-control"><small class="form-text text-muted">Nhập họ và tên</small></div>
+                        <div class="form-group row">
+                            <label for="full_name" class="col-md-4 col-form-label text-md-right">Họ và tên chủ shop</label>
+                            <div class="col-md-6">
+                                <input th:field="*{tenChuShop}" id="full_name" type="text" class="form-control" name="full_name" required autocomplete="full_name" autofocus>
                             </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input1" class=" form-control-label">Tên shop: </label></div>
-                                <div class="col-12 col-md-9"><input th:field="*{tenShop}" type="text" id="text-input1" name="text-input" placeholder="Nhập tên shop" class="form-control"><small class="form-text text-muted">Nhập tên shop</small></div>
-                            </div>
+                        </div>
 
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="email-input" class=" form-control-label">Email Input</label></div>
-                                <div class="col-12 col-md-9"><input th:field="*{email}" type="email" id="email-input" name="email-input" placeholder="Enter Email" class="form-control"><small class="help-block form-text">Please enter your email</small></div>
+                        <div class="form-group row">
+                            <label for="shop_name" class="col-md-4 col-form-label text-md-right">Tên shop</label>
+                            <div class="col-md-6">
+                                <input  th:field="*{tenShop}" id="shop_name" type="text" class="form-control" name="shop_name" required autocomplete="shop_name">
                             </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label class=" form-control-label">Giới tính</label></div>
-                                <div class="col col-md-9">
-                                    <div class="form-check-inline form-check">
-                                        <label for="inline-radio1" class="form-check-label ">
-                                            <input th:field="*{gioiTinh}" type="radio" id="inline-radio1" name="inline-radios" value="Nam" class="form-check-input">Nam
-                                        </label>
-                                        <label for="inline-radio2" class="form-check-label ">
-                                            <input th:field="*{gioiTinh}" type="radio" id="inline-radio2" name="inline-radios" value="Nữ" class="form-check-input">Nữ
-                                        </label>
-                                        <label for="inline-radio3" class="form-check-label ">
-                                            <input th:field="*{gioiTinh}" type="radio" id="inline-radio3" name="inline-radios" value="Giới tính khác" class="form-check-input">Khác
-                                        </label>
-                                    </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
+                            <div class="col-md-6">
+                                <input th:field="*{email}" id="email" type="email" class="form-control" name="email" required autocomplete="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="gender" class="col-md-4 col-form-label text-md-right">Giới tính</label>
+                            <div class="col-md-6">
+                                <select th:field="*{gioiTinh}" class="form-control" id="gender" name="gender" required>
+                                    <option value="Nam">Nam</option>
+                                    <option value="Nữ">Nữ</option>
+                                    <option value="Khác">Khác</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="address" class="col-md-4 col-form-label text-md-right">Địa chỉ của bạn</label>
+                            <div class="col-md-6">
+                                <input th:field="*{diaChi}" id="address" type="text" class="form-control" name="address" required autocomplete="address">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="dob" class="col-md-4 col-form-label text-md-right">Ngày sinh</label>
+                            <div class="col-md-6">
+                                <input th:field="*{ngaySinh}"  id="dob" type="date" class="form-control" name="dob" required autocomplete="dob" max="{{ date('Y-m-d', strtotime('-18 years')) }}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="phone" class="col-md-4 col-form-label text-md-right">Số điện thoại</label>
+                            <div class="col-md-6">
+                                <input th:field="*{sdt}" id="phone" type="tel" class="form-control" name="phone" pattern="[0-9]{10,11}" required autocomplete="phone">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="id_card" class="col-md-4 col-form-label text-md-right">Số căn cước công dân</label>
+                            <div class="col-md-6">
+                                <input input th:field="*{cccd}" id="id_card" type="text" class="form-control" name="id_card" required autocomplete="id_card">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="id_card_front" class="col-md-4 col-form-label text-md-right">File mặt trước căn cước công dân</label>
+                            <div class="col-md-6">
+                                <div class="custom-file">
+                                    <input name="cccd_mt" type="file" class="custom-file-input" id="id_card_front"  required>
+                                    <label class="custom-file-label" for="id_card_front">Chọn file</label>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="password-input" class=" form-control-label">Địa chỉ của bạn: </label></div>
-                                <div class="col-12 col-md-9"><input th:field="*{diaChi}" type="text" id="password-input" name="password-input" placeholder="Nhập địa chỉ" class="form-control"><small class="help-block form-text">Xin hãy nhập đúng địa chỉ</small></div>
+                        <div class="form-group row">
+                            <label for="id_card_back" class="col-md-4 col-form-label text-md-right">File mặt sau căn cước công dân</label>
+                            <div class="col-md-6">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="id_card_back" name="cccd_ms" required>
+                                    <label class="custom-file-label" for="id_card_back">Chọn file</label>
+                                </div>
                             </div>
+                        </div>
 
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="password-input_1" class=" form-control-label">Ngày sinh: </label></div>
-                                <div class="col-12 col-md-9"><input th:field="*{ngaySinh}" type="date" id="password-input_1" name="password-input" placeholder="Nhập ngày sinh" class="form-control"><small class="help-block form-text">Xin hãy nhập đúng ngày sinh</small></div>
+                        <div class="form-group row">
+                            <label for="description" class="col-md-4 col-form-label text-md-right">Mô tả shop</label>
+                            <div class="col-md-6">
+                                <textarea th:field="*{moTa}" id="description" class="form-control" name="description" rows="3" required></textarea>
                             </div>
+                        </div>
 
-
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="password-input_2" class=" form-control-label">Số điện thoại: </label></div>
-                                <div class="col-12 col-md-9"><input th:field="*{sdt}" type="text" id="password-input_2" name="password-input" placeholder="Nhập số điện thoại" class="form-control"><small class="help-block form-text">Xin hãy nhập đúng số điện thoại</small></div>
+                        <div class="form-group row">
+                            <label for="hotline" class="col-md-4 col-form-label text-md-right">Hotline</label>
+                            <div class="col-md-6">
+                                <input th:field="*{hotLine}" id="hotline" type="tel" class="form-control" name="hotline" pattern="[0-9]{10,11}" required autocomplete="hotline">
                             </div>
+                        </div>
 
-
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="password-input_32" class=" form-control-label">Số CCCD: </label></div>
-                                <div class="col-12 col-md-9"><input th:field="*{cccd}" type="text" id="password-input_32" name="password-input" placeholder="Nhập số CCCD" class="form-control"><small class="help-block form-text">Xin hãy nhập đúng số CCCD</small></div>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">Đăng ký trở thành chủ shop</button>
                             </div>
-
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="file-input2" class=" form-control-label">Mặt trước CCCD</label></div>
-                                <div class="col-12 col-md-9"><input type="file" id="file-input2" name="cccd_mt" class="form-control-file"></div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="file-input" class=" form-control-label">Mặt sau CCCD</label></div>
-                                <div class="col-12 col-md-9"><input type="file" id="file-input" name="cccd_ms" class="form-control-file"></div>
-                            </div>
-
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Mô tả shop</label></div>
-                                <div class="col-12 col-md-9"><textarea th:field="*{moTa}" name="textarea-input" id="textarea-input" rows="9" placeholder="Content..." class="form-control"></textarea></div>
-                            </div>
-
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="email-input1" class=" form-control-label">Hot line</label></div>
-                                <div class="col-12 col-md-9"><input th:field="*{hotLine}" type="text" id="email-input1" name="email-input" placeholder="Hot line" class="form-control"><small class="help-block form-text">Nhập số điện thoại</small></div>
-                            </div>
-
-
-
-
-                            <div class="card-footer">
-                                <input value="Xác nhận đăng kí chủ shop" type="submit" class="btn btn-primary btn-sm">
-                            </div>
-                        </form>
-                    </div>
-
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div><!-- .animated -->
-    </div><!-- .content -->
-</div><!-- /#right-panel -->
-<!-- Right Panel -->
+        </div>
+    </div>
+</div>
 
 
-<script src="/vendors/jquery/dist/jquery.min.js"></script>
-<script src="/vendors/popper.js/dist/umd/popper.min.js"></script>
-
-<script src="/vendors/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="/vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
-
-<script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="/assets/js/main.js"></script>
 </body>
 </html>
